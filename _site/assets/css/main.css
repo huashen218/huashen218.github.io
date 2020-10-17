@@ -692,8 +692,9 @@ form input[type=submit]:active { background: #3A006F; }
 
 .homecolumnleft{
     float: left;
-    /* width: 10%; */
-    padding-left: 200px;
+    width: 15%;
+    /* padding-left: 200px; */
+    padding-left: 25%;
     padding-top: 40px;
 }
 
@@ -703,6 +704,7 @@ form input[type=submit]:active { background: #3A006F; }
     width: 80%;
     /* max-width: 600px; */
     /* padding: 15px; */
+    /* padding-right: 10%; */
 }
 
 

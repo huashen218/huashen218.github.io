@@ -1,1 +1,0 @@
-This is Hua Shen's Personal Website.
