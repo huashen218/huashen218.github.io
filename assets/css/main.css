@@ -247,7 +247,7 @@ form input[type=submit]:active { background: #923056; }
 
 .site-nav .nav-list li:not(:last-child) { margin-right: 15px; }
 
-.site-nav .nav-list li:hover { border-bottom: 5px #3F3F3F solid; }
+.site-nav .nav-list li:hover { border-bottom: 5px var(--brand-color) solid; }
 
 @media screen and (max-width: 500px) { .site-nav .nav-list li { height: auto; line-height: normal; } .site-nav .nav-list li:nth-child(n+0) { margin: 0; height: auto; padding: 0 10px 0px; } .site-nav .nav-list li a { margin: 0px; padding: 0px; } }
 
