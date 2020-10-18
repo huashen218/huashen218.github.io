@@ -2,49 +2,87 @@
 layout: default
 ---
 
-    {% include profile.html %}
+<!-- ALL ICONS LINK HERE: https://github.com/goodinc/ctzn-ui/tree/gh-pages/assets/images/icons -->
+     
+<div class="wrapper">
     
-    <div class="wrapper">
+    <div class="top">
+
+        <div class="about-col-1">
+            <img 
+            class="user-picture"
+            src="/assets/images/profile.jpeg"
+            alt="Hua Shen" >
+        </div>
     
-    <div class="homecolumnright">
-    
-    <div>
-        <h2>
-        <!-- <a class="post-name" href="/jekyll/update/2020/10/15/welcome-to-jekyll.html">Hua Shen</a> -->
-        <a class="post-name">Hua Shen</a>
-        </h2>
-        <span> Ph.D Candidate @PennState</span>
+        <div class="about-col-2">
+            <h2><a class="post-name">Hua Shen</a></h2>
+            <span> Ph.D Candidate @PennState</span>
+            <!-- <span> XAI Researcher @PennState</span> -->
+        </div>
+
+    </div>
+
+
+    <div class="homemain">
+
         <br>
-        <span style="font-size:18px"><a class="post-link" href="http://127.0.0.1:4000/assets/files/HuaShen_CV.pdf">[CV]</a></span>
-        <span style="font-size:18px"><a class="post-link" href="https://scholar.google.com/citations?user=zFjlv1sAAAAJ&hl=en">[Google Scholar]</a></span>
-        <span style="font-size:18px"><a class="post-link" href="/">[Email: huashen218@psu.edu]</a></span>
+
+        <span class="cl-item">
+            {% include _icons/github.html username='Codes' %}
+        </span>
+
+        <span class="cl-item">
+            {% include _icons/scholar.html username=' zFjlv1sAAAAJ&hl=en' %}     
+        </span>
+
+        <span class="cl-item">
+            {% include _icons/twitter.html username=' @SarahHShen1' %}
+        </span>
+
+        <span class="cl-item">
+            {% include _icons/email.html username=' huashen218@psu.edu' %}
+        </span>
+
     </div>
     
+
+    <div class="homemain">
+
     <br>
-    
-    <div>
+
+
+    <div class="short-bio">
         <span class="subtitle">SHORT BIO</span>
         <p>Currently, I am a Ph.D. Candidate in <a class="post-link" href="https://ist.psu.edu/">IST College</a> at <a class="post-link" href="https://www.psu.edu/">PennState University</a>, I am fortunate to be advised by <a class="post-link" href="https://crowd.ist.psu.edu/">Prof. Ting-hao (Kenneth) Huang</a> at <a class="post-link" href="https://crowd.ist.psu.edu/crowd-ai-lab.html">CrowdAI Lab</a>. I appreciate the wonderful years advised by <a class="post-link" href="https://www.alpslab.ai/">Prof. Ting Wang</a> from IST at PennState, and co-advised by <a class="post-link" href="http://www.cse.lehigh.edu/~brian/">Prof. Brian D. Davison</a> from CSE at Lehigh University.</p>
     </div>
     
     
-    <div>
+
+    <div class="research-interest">
         <span class="subtitle">RESEARCH INTEREST</span>
-        <p>My research interests lie in general area of AI and HCI, particularly in making deep learning models
-        explainable by humans. Related topics include XAI, HAI, ConversationalAI, Crowdsourcing.</p>
+        <p>I am interested in general area of <strong>AI</strong> and <strong>HCI</strong>. 
+            Particularly, my focus is <strong>Human-centric AI interpretation</strong>, 
+            including <strong>buiding human-friendly interpretation methods</strong> or <strong>helping human better percieve interpretation.</strong>
+            <!-- I believe <em>helping everyone understand AI is of importance to fully unleash the AI benefits</em>.</p> -->
+            I believe <em>developing AI explanation from human persepctive is of importance to make AI interpretable to everyone</em>.</p>
     </div>
     
     
     <br>
-    <div>
+
+    <div class="video">
         <span class="subtitle">VIDEO</span>
     
         <div>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/DlpQBTmQlcM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
+
+
     <br>
     
+
     <!-- <div>
         <span class="subtitle">NEWS</span>
         <li>
@@ -54,8 +92,14 @@ layout: default
         Passed the qualifying exam!
         </li>
     </div> -->
-    
+
+
     </div>
     
-    </div>
+
+
+</div>
+
+
+
 
