@@ -139,14 +139,15 @@ hr { color: #3F3F3F; margin: 50px auto 25px auto; width: 100%; padding-left: 10%
 
 /** Wrapper */
 /* .wrapper { max-width: -webkit-calc(700px - (50px * 2)); max-width: calc(700px - (50px * 2)); margin-right: auto; margin-left: auto; padding-right: 50px; padding-left: 50px; } */
-.wrapper { max-width: 700px); max-width: 700px; margin-right: auto; margin-left: auto; padding-right: 50px; padding-left: 50px; text-align: justify; text-justify: inter-word;}
+/* .wrapper { max-width: 700px); max-width: 700px; margin-right: auto; margin-left: auto; padding-right: 50px; padding-left: 50px; text-align: justify; text-justify: inter-word;} */
+.wrapper { max-width: 1100px); max-width: 1100px; margin-right: auto; margin-left: auto; padding-right: 50px; padding-left: 50px; text-align: justify; text-justify: inter-word;}
 
 
 /** Wrapper */
 .pagewrapper { max-width: 1100px; max-width: 1100px; margin-right: auto; margin-left: auto; padding-right: 50px; padding-left: 50px; text-align: justify; text-justify: inter-word;}
 
 
-@media screen and (max-width: 700px) { .wrapper { max-width: -webkit-calc(700px - (50px)); max-width: calc(700px - (50px)); padding-right: 25px; padding-left: 25px; } }
+@media screen and (max-width: 700px) { .wrapper { max-width: -webkit-calc(1100px - (50px)); max-width: calc(1100px - (50px)); padding-right: 25px; padding-left: 25px; } }
 
 /** Clearfix */
 .about-col-wrapper:after, .wrapper:after { content: ""; display: table; clear: both; }
@@ -215,7 +216,7 @@ form input[type=submit]:active { background: #923056; }
 
 @media screen and (max-width: 700px) and (max-width: 500px) { .site-header .lang-selector { margin-top: 0px; } }
 
-.site-title { display: inline-block; font-size: 26px; font-weight: 300; line-height: 55px; letter-spacing: -1px; margin-bottom: -5px; }
+.site-title { display: inline-block; font-size: 28px; font-weight: 300; line-height: 65px; letter-spacing: -1px; margin-bottom: -5px; margin-left: 200px}
 
 .site-title, .site-title:visited { color: black; }
 
@@ -231,15 +232,15 @@ form input[type=submit]:active { background: #923056; }
 
 @media screen and (max-width: 500px) { .site-pitch { display: block; padding-left: 0; padding-bottom: 15px; line-height: initial; color: #bfbfbf; } .site-pitch:before { content: ""; } }
 
-.site-nav { float: right; line-height: 60px; z-index: 1000; }
+.site-nav { float: right; line-height: 70px; z-index: 1000; }
 
 .site-nav .menu-icon { display: none; }
 
 .site-nav .nav-list-title { display: none; }
 
-.site-nav .nav-list { list-style: none; margin: 0; }
+.site-nav .nav-list { list-style: none; margin: 0; font-size: 18pt}
 
-.site-nav .nav-list li { display: inline-block; height: 55px; }
+.site-nav .nav-list li { display: inline-block; height: 65px; }
 
 .site-nav .nav-list li .page-link { color: #111; }
 
@@ -266,9 +267,9 @@ form input[type=submit]:active { background: #923056; }
 
 .site-footer .footer-col .author, .site-footer .footer-col .author a { color: #bfbfbf; }
 
-.site-footer .footer-col-1 { width: -webkit-calc(65% - (50px / 2)); width: calc(65% - (50px / 2)); float: left; }
+.site-footer .footer-col-1 { width: -webkit-calc(35% - (50px / 2)); width: calc(35% - (50px / 2)); float: left; margin-left:30px}
 
-.site-footer .footer-col-2 { width: -webkit-calc(35% - (50px / 2)); width: calc(35% - (50px / 2)); float: right; }
+.site-footer .footer-col-2 { width: -webkit-calc(35% - (200px / 2)); width: calc(35% - (500px / 2)); float: right; margin-left:100px;}
 
 .site-footer .single-col { clear: both; list-style: none; margin: 0; text-align: center; }
 
@@ -696,20 +697,22 @@ form input[type=submit]:active { background: #923056; }
   }
 
 
-.post-name { margin-top: 0; color: var(--brand-color); text-align: center; font-size: 30px;}
+.post-name { margin-top: 50pt; color: var(--brand-color); text-align: center; font-size: 30px;}
 
 
 
 .about-col-1 {
     float: left;
-    padding-left: 20%;
-    width: -webkit-calc(35% - (30px));
+    padding-left: 30%;
+    width: -webkit-calc(28% - (30px));
 }
 
 
 
 .about-col-2 {
     float: right;
+    padding-top:2%;
+    padding-right: 10%;
     width:300px;
     /* width: -webkit-calc(65% -50px); */
     /* width:         calc(65% - 50px); */
