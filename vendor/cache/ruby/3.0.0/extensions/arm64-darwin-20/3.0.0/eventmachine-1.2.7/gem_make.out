@@ -1,0 +1,16 @@
+current directory: /Users/huashen/Dropbox/4_Personal_website/huashen218.github.io/vendor/cache/ruby/3.0.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/opt/homebrew/opt/ruby/bin/ruby -I /opt/homebrew/Cellar/ruby/3.0.2/lib/ruby/3.0.0 -r ./siteconf20210909-30892-dabb4s.rb extconf.rb
+creating Makefile
+
+current directory: /Users/huashen/Dropbox/4_Personal_website/huashen218.github.io/vendor/cache/ruby/3.0.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= clean
+
+current directory: /Users/huashen/Dropbox/4_Personal_website/huashen218.github.io/vendor/cache/ruby/3.0.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\=
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.bundle
+
+current directory: /Users/huashen/Dropbox/4_Personal_website/huashen218.github.io/vendor/cache/ruby/3.0.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 fastfilereaderext.bundle ./.gem.20210909-30892-ovfoi8
