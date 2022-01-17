@@ -659,8 +659,9 @@ form input[type=submit]:active { background: #923056; }
 
 .subtitle{
     font-size: 19px; 
-    font-family: "Open Sans", sans-serif; 
+    font-family: 'Open Sans', sans-serif;
     font-weight: 200; 
+    /* font-weight: bold;  */
     color: #3F3F3F; 
 }
 
