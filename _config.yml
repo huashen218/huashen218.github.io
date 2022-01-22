@@ -30,8 +30,8 @@ twitter_username: SarahHShen1
 github_username:  huashen218
 
 # Build settings
-# theme: minima
-theme: academic
+theme: minima
+# theme: academic
 plugins:
   - jekyll-feed
   - jekyll-data
