@@ -3,10 +3,10 @@
 	"file": "main.css",
 	"sources": [
 		"main.scss",
-		"vendor/cache/ruby/3.0.0/gems/academic-0.5.8/_sass/academic.scss",
-		"vendor/cache/ruby/3.0.0/gems/academic-0.5.8/_sass/academic/_base.scss",
-		"vendor/cache/ruby/3.0.0/gems/academic-0.5.8/_sass/academic/_layout.scss",
-		"vendor/cache/ruby/3.0.0/gems/academic-0.5.8/_sass/academic/_syntax-highlighting.scss"
+		"../../../../../opt/homebrew/lib/ruby/gems/3.0.0/gems/academic-0.5.8/_sass/academic.scss",
+		"../../../../../opt/homebrew/lib/ruby/gems/3.0.0/gems/academic-0.5.8/_sass/academic/_base.scss",
+		"../../../../../opt/homebrew/lib/ruby/gems/3.0.0/gems/academic-0.5.8/_sass/academic/_layout.scss",
+		"../../../../../opt/homebrew/lib/ruby/gems/3.0.0/gems/academic-0.5.8/_sass/academic/_syntax-highlighting.scss"
 	],
 	"sourcesContent": [
 		"@charset \"utf-8\";\n\n@import url('https://fonts.googleapis.com/css?family=Open+Sans:800|PT+Serif');\n\n// Our variables\n// $base-font-family: \"Open Sans\", sans-serif;\n$base-font-family: \"PT Serif\", serif;\n$base-font-size:   20px;\n$base-font-weight: 400;\n$small-font-size:  $base-font-size * 0.95;\n$base-line-height: 1.5;\n\n$alt-font-family: \"Open Sans\", sans-serif;\n$alt-font-weight: bold;\n\n$spacing-unit:     50px;\n\n$text-color:       #111;\n$background-color: #fdfdfd;\n$brand-color:      #d33682;\n\n$grey-color:       #3F3F3F;\n$grey-color-light: lighten($grey-color, 50%);\n$grey-color-lighter: lighten($grey-color, 70%);\n$grey-color-dark:  darken($grey-color, 25%);\n\n// Width of the content area\n$content-width:    700px;\n\n$on-palm:          500px;\n$on-laptop:        700px;\n\n// Minima also includes a mixin for defining media queries.\n// Use media queries like this:\n// @include media-query($on-palm) {\n//     .wrapper {\n//         padding-right: $spacing-unit / 2;\n//         padding-left: $spacing-unit / 2;\n//     }\n// }\n\n// Import partials from the `minima` theme.\n@import \"academic\";\n",
