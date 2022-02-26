@@ -14,6 +14,13 @@ body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure { m
     --link-color: #923056;
 }
 
+
+/* :root {
+    --brand-color: #434C96;
+    --link-color: #434C96;
+} */
+
+
 /* 5B1A8E     3A006F     #714298*/
 
 /** Basic styling */
@@ -657,6 +664,7 @@ form input[type=submit]:active { background: #923056; }
 
 
 
+
 .subtitle{
     font-size: 19px; 
     font-family: 'Open Sans', sans-serif;
@@ -814,4 +822,14 @@ form input[type=submit]:active { background: #923056; }
     /* padding:30px;
     margin: 30px; */
     /* margin-bottom: $spacing-unit / 2; */
+}
+
+.new-date {
+    font-weight: bold;
+    background-color: #94676F;
+    color: white;
+    border-radius: 2px;
+    font-size: 15px;
+    padding: 3pt;
+    margin-left: 0pt
 }
