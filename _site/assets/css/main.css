@@ -835,8 +835,8 @@ form input[type=submit]:active { background: #923056; }
 }
 
 
-.video {
-    height: 300px;
+/* .video {
+    height: 1000px;
     width: 100%;
     overflow: auto;
     padding: 0 10px;
@@ -848,4 +848,4 @@ form input[type=submit]:active { background: #923056; }
     width: 10px;
     background-color: white;
     color: #94676F;
-}
+} */
