@@ -837,12 +837,15 @@ form input[type=submit]:active { background: #923056; }
 
 .video {
     height: 300px;
-    width: 50%;
+    width: 100%;
     overflow: auto;
     padding: 0 10px;
+
 }
-/*       ScrollBar 1        */
+
 
 #video::-webkit-scrollbar {
     width: 10px;
+    background-color: white;
+    color: #94676F;
 }
