@@ -833,3 +833,16 @@ form input[type=submit]:active { background: #923056; }
     padding: 3pt;
     margin-left: 0pt;
 }
+
+
+.video {
+    height: 300px;
+    width: 50%;
+    overflow: auto;
+    padding: 0 10px;
+}
+/*       ScrollBar 1        */
+
+#video::-webkit-scrollbar {
+    width: 10px;
+}
