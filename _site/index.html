@@ -60,6 +60,46 @@
 integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
 crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
+
+<style>
+    /* Force scrollbars onto browser window */
+    /* body {
+    margin-bottom: 200%;
+    } */
+    
+    /* Box styles */
+    .myBox {
+    border: solid #E6E6E6;
+    /* border-style: dotted; */
+    /* border-color: #666666; */
+    border-width: 0.5px;
+    padding: 5px;
+    /* font: 24px/36px sans-serif; */
+    width: 100%;
+    height: 800px;
+    overflow: scroll;
+    }
+    
+    /* Scrollbar styles */
+    ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    }
+    
+    /* ::-webkit-scrollbar-track { */
+    /* border: 0.5px solid var(--brand-color); */
+    /* border: 0.5px solid; */
+    /* border-radius: 10px; */
+    /* } */
+    
+    ::-webkit-scrollbar-thumb {
+    background: var(--brand-color);  
+    border-radius: 5px;
+    }
+
+</style>
+
 <div class="wrapper">
     
     <div class="top">
@@ -174,10 +214,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     
     <br>
-
-    <div class="video" id="video">
-        <span class="subtitle" style="font-weight:800; overflow-y:scroll;">NEWS</span>
-        <br>
+    <span class="subtitle" style="font-weight:800; overflow-y:scroll;">NEWS</span>
+    <!-- <div class="video" id="video" style="overflow-y:auto"> -->
+    <br>
+    <div class="video myBox" id="video">
+        <!-- <br> -->
         <li style="text-align:left">
             <span class="new-date">Jun-2023</span> Excited to serve on the PC member of the <a class="post-link" href="https://sites.google.com/view/aihci/home?authuser=0">ICML 2023 AI and HCI Workshop</a>, and reviewer of <a class="post-link" href="https://2023.emnlp.org/">EMNLP 2023</a>. Thanks for your invitation!
         </li>
