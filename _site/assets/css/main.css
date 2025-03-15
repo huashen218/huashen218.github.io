@@ -10,16 +10,23 @@ body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure { m
 } */
 
 
-:root {
-    --brand-color: #923056;
-    --link-color: #923056;
-}
+/* :root {
+    --brand-color: #420078;
+    --link-color: #420078;
+} */
 
 
 /* :root {
     --brand-color: #434C96;
     --link-color: #434C96;
 } */
+
+
+:root {
+    --brand-color: #440079;
+    --link-color: #440079;
+}
+
 
 
 
@@ -102,7 +109,7 @@ a:visited { color: var(--link-color); }
 
 
 
-a:hover { color: #923056; text-decoration: underline; }
+a:hover { color: #420078; text-decoration: underline; }
 
 /** Blockquotes */
 blockquote { color: #3F3F3F; padding-left: 25px; padding-right: 50px; font-size: 1.15rem; line-height: 1.84rem; }
@@ -180,11 +187,11 @@ form input { font-size: 1.15rem; line-height: 1.84rem; color: #3F3F3F; font-fami
 
 @media (max-width: 45em) { form input { font-size: 0.95rem; line-height: 1.84rem; } }
 
-form input[type=email]:focus { border-color: #923056; }
+form input[type=email]:focus { border-color: #420078; }
 
 form input[type=submit]:hover { color: #fdfdfd; background: #3F3F3F; }
 
-form input[type=submit]:active { background: #923056; }
+form input[type=submit]:active { background: #420078; }
 
 /** Site header */
 .site-header { border-top: 5px solid #3F3F3F; border-bottom: 1px solid #bfbfbf; position: relative; }
@@ -209,7 +216,7 @@ form input[type=submit]:active { background: #923056; }
 
 .site-header .lang-selector:hover .lang:first-child { padding-bottom: 10px; }
 
-.site-header .lang-selector:hover .lang a { color: #923056; }
+.site-header .lang-selector:hover .lang a { color: #420078; }
 
 .site-header .lang-selector:hover .lang a:hover { text-decoration: none; color: #bfbfbf; }
 
@@ -221,7 +228,7 @@ form input[type=submit]:active { background: #923056; }
 
 @media screen and (max-width: 700px) and (max-width: 45em) { .site-header .lang-selector { font-size: 0.95rem; line-height: 1.84rem; } }
 
-@media screen and (max-width: 700px) { .site-header .lang-selector .lang-intro { display: inline-block; } .site-header .lang-selector .lang:nth-child(n+1) { padding: 5px 5px 5px 0; line-height: normal; display: inline-block; } .site-header .lang-selector .lang:nth-child(n+1) a { color: black; } .site-header .lang-selector .lang:nth-child(n+1) a:hover { text-decoration: underline; } .site-header .lang-selector .lang:nth-child(n+3):before { content: "| "; } .site-header .lang-selector:hover { background: #f2f2f2; padding: 5px 5px 5px 25px; } .site-header .lang-selector:hover .lang:nth-child(n+1) { padding: 5px 5px 5px 0; display: inline-block; border: none; } .site-header .lang-selector:hover .lang:nth-child(n+1) a { color: #923056; } }
+@media screen and (max-width: 700px) { .site-header .lang-selector .lang-intro { display: inline-block; } .site-header .lang-selector .lang:nth-child(n+1) { padding: 5px 5px 5px 0; line-height: normal; display: inline-block; } .site-header .lang-selector .lang:nth-child(n+1) a { color: black; } .site-header .lang-selector .lang:nth-child(n+1) a:hover { text-decoration: underline; } .site-header .lang-selector .lang:nth-child(n+3):before { content: "| "; } .site-header .lang-selector:hover { background: #f2f2f2; padding: 5px 5px 5px 25px; } .site-header .lang-selector:hover .lang:nth-child(n+1) { padding: 5px 5px 5px 0; display: inline-block; border: none; } .site-header .lang-selector:hover .lang:nth-child(n+1) a { color: #420078; } }
 
 @media screen and (max-width: 700px) and (max-width: 500px) { .site-header .lang-selector { margin-top: 0px; } }
 
@@ -233,7 +240,7 @@ form input[type=submit]:active { background: #923056; }
 
 .site-title b { font-weight: 600; }
 
-.with-pitch:hover { border-bottom: none; color: #923056; }
+.with-pitch:hover { border-bottom: none; color: #420078; }
 
 .site-pitch { display: inline-block; clear: both; line-height: 60px; padding-left: 10px; color: #3F3F3F; }
 
@@ -754,7 +761,7 @@ form input[type=submit]:active { background: #923056; }
     /* margin-bottom: $spacing-unit / 2; */
 }
 
-/* .photograph-show a:hover { color: #923056; text-decoration: underline;  } */
+/* .photograph-show a:hover { color: #420078; text-decoration: underline;  } */
 
 
 .photograph-show img:hover {
