@@ -1,0 +1,527 @@
+---
+layout: default
+---
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ALL ICONS LINK HERE: https://github.com/goodinc/ctzn-ui/tree/gh-pages/assets/images/icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+<style>
+    /* Force scrollbars onto browser window */
+    /* body {
+    margin-bottom: 200%;
+    } */
+    
+    /* Box styles */
+    .myBox {
+    border: solid #E6E6E6;
+    /* border-style: dotted; */
+    /* border-color: #666666; */
+    border-width: 0.5px;
+    padding: 5px;
+    /* font: 24px/36px sans-serif; */
+    width: 100%;
+    height: 800px;
+    overflow: scroll;
+    }
+    
+    /* Scrollbar styles */
+    ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    }
+    
+    /* ::-webkit-scrollbar-track { */
+    /* border: 0.5px solid var(--brand-color); */
+    /* border: 0.5px solid; */
+    /* border-radius: 10px; */
+    /* } */
+    
+    ::-webkit-scrollbar-thumb {
+    background: var(--brand-color);  
+    border-radius: 5px;
+    }
+
+</style>
+
+<div class="wrapper">
+    
+    <div class="top">
+
+        <div class="about-col-1">
+            <img 
+            class="user-picture"
+            src="/assets/images/profile.png"
+            alt="Hua Shen" >
+        </div>
+    
+        <div class="about-col-2">
+            <h2><a class="post-name">Hua Shen,  <span style="font-size: 18pt;">Ph.D.</span></a></h2>
+            <span  style="font-size: 15pt; font-weight: 800;">Hello There! &#129303;</span>
+            <!-- <br> -->
+            <!-- <span> Postdoc @UMich</span> -->
+        </div>
+
+    </div>
+
+
+    <div class="homemain" style="text-align:center;">
+
+        <br>
+
+        <span class="cl-item" style="font-size:1.15rem;">
+            {% include _icons/scholar.html username=' zFjlv1sAAAAJ&hl=en' %} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+
+        <span class="cl-item" style="font-size:1.15rem;">
+            {% include _icons/github.html username='Codes' %} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+
+        <span class="cl-item" style="font-size:1.15rem;">
+            {% include _icons/twitter.html username=' Twitter' %} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+
+        <!-- <span class="cl-item" style="font-size:1.15rem;">
+            {% include _icons/instagram.html username='Instagram' %} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span> -->
+
+        <span class="cl-item" style="font-size:1.15rem;">
+            {% include _icons/linkedin.html username='Linkedin' %} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+
+        <span class="cl-item" style="font-size:1.15rem;">
+            {% include _icons/file.html username='CV' %} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+
+        <span class="cl-item" style="font-size:1.15rem;">
+            {% include _icons/email.html username=' huashen@uw.edu' %} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+
+
+
+    </div>
+    
+
+    <div class="homemain">
+
+    <br>
+
+    <div class="short-bio">
+        Starting in Fall 2025, I will be a tenure-track Assistant Professor of Computer Science at <a class="post-link" href="https://shanghai.nyu.edu/" target="_blank">NYU Shanghai</a>, affiliated with the <a class="post-link" href="https://engineering.nyu.edu/" target="_blank">Tandon School of Engineering</a> at <a class="post-link" href="https://www.nyu.edu/" target="_blank">New York University</a>. 
+        <br>
+        <br>
+
+        I am currently a Postdoctoral Scholar at the <a class="post-link" href="https://ischool.uw.edu/" target="_blank">iSchool</a> and the <a class="post-link" href="https://www.raise.uw.edu/" target="_blank">RAISE</a> Center at the <a class="post-link" href="https://ischool.uw.edu/" target="_blank">University of Washington</a>, closely working with Prof. <a class="post-link" href="https://ischool.uw.edu/people/faculty/profile/tmitra" target="_blank">Tanu Mitra</a> who co-founded the center.
+        <br>
+        <br>
+
+
+
+
+        <!-- <a class="post-link" href="https://arxiv.org/abs/2406.09264" target="_blank">Bidirectional Human-AI Alignment</a> -->
+        
+
+        <!-- I completed my Ph.D. at <a class="post-link" href="https://www.psu.edu/" target="_blank">Penn State</a> from 2019.09 to 2023.07, fortunately trained by my amazing advisor Prof. <a class="post-link" href="https://crowd.ist.psu.edu/" target="_blank">Ting-hao 'Kenneth' Huang</a>, and closely worked with committee members: Profs. <a class="post-link" href="https://scholar.google.com/citations?user=1GUWOTEAAAAJ&hl=en" target="_blank">Mary Beth Rosson</a>, <a class="post-link" href="https://scholar.google.com/citations?user=sAkg9T8AAAAJ&hl=en" target="_blank">C. Lee Giles</a>, <a class="post-link" href="https://scholar.google.co.uk/citations?user=KP-DwH0AAAAJ&hl=en" target="_blank">S. Shyam Sundar</a> <span style="color:#999999">(Penn State)</span>, Prof. <a class="post-link" href="https://www.cs.cmu.edu/~sherryw/" target="_blank">Sherry Tongshuang Wu</a> <span style="color:#999999">(CMU)</span>, and external mentor Dr. <a class="post-link" href="https://scholar.google.com/citations?user=NK36Tw0AAAAJ&hl=en" target="_blank">Andreas Stolcke</a> <span style="color:#999999">(Distinguished AI Scientist at Uniphore)</span>.
+        <br>
+        <br> -->
+
+        I completed my Ph.D. at <a class="post-link" href="https://www.psu.edu/" target="_blank">Penn State</a> from 2019.09 to 2023.07, fortunately worked with by my amazing advisor Prof. <a class="post-link" href="https://crowd.ist.psu.edu/" target="_blank">Ting-hao 'Kenneth' Huang</a> and my committee member Prof. <a class="post-link" href="https://www.cs.cmu.edu/~sherryw/" target="_blank">Sherry Tongshuang Wu</a> <span style="color:#999999">(CMU)</span>.
+        <!-- , and external mentor Dr. <a class="post-link" href="https://scholar.google.com/citations?user=NK36Tw0AAAAJ&hl=en" target="_blank">Andreas Stolcke</a> <span style="color:#999999">(Distinguished AI Scientist at Uniphore)</span>. -->
+        <!-- <br>
+        <br> -->
+        Throughout my Ph.D. studies, I interned in several amazing teams at <a class="post-link" href="https://ai.google/research/" target="_blank">Google Research</a> (now <a class="post-link" href="https://deepmind.google/" target="_blank">Google DeepMind</a>) and <a class="post-link" href="https://www.amazon.science/tag/alexa" target="_blank">Amazon Alexa AI</a> (now <a class="post-link" href="https://deepmind.google/" target="_blank">Amazon AGI</a>).
+        I also spent one wonderful year as a Postdoc Research Fellow at <a class="post-link" href="https://www.si.umich.edu/" target="_blank">University of Michigan—Ann Arbor</a>. 
+        <!-- Deeply grateful for my collaborators, whose constructive insights greatly enriched my knowledge and expertise &#129505;! -->
+ 
+    
+
+        <h2 style="text-align: center; margin-bottom: -25px;"><a class="post-name">Research Overview</a></h2>
+        <br>
+        <br>
+        I'm a <b>HCI+AI</b> researcher initiating and working on <b>Bidirectional <span style="color:#DE4A4D">Humans</span><span style="color:#F9AB10;font-weight: 900;">&#8596</span><span style="color:#1271CA">AI</span> Alignment</b> (<a class="post-link" href="https://arxiv.org/abs/2406.09264" target="_blank">A systematic review</a>), studying AI agent collaboration with both individuals and society, to:
+        <br>
+        <br>
+        <h4 style="text-align: center; margin: 0px;"><i style="text-align: center"><b>Maximize Co-performance & Minimize Harms in Human-AI Interactions</b></i> </h3>
+        <br>
+
+        If you are interested in joining us to explore relevant topics, I'll be looking for undergraduate, master or PhD students! <b>Find out our <a class="post-link" href="https://hua-shen.org/src/bialign_lab.html">openings</a> at <a class="post-link" href="https://hua-shen.org/src/bialign_lab.html">this Page</a>.</b>
+        <br>
+        <br>
+        I'm also leading our <a class="post-link" href="https://bialign-workshop.github.io/#/" target="_blank">BiAlign</a> <a class="post-link" href="https://bialign-workshop.github.io/#/" target="_blank">ICLR 2025 Workshop and CHI 2025 SIG.</a> Love to chat in person!</b> 
+        <br>
+        <br>
+
+
+        <!-- ============ Research Highlights ============ -->
+        <span class="subtitle" style="font-size:18pt; font-weight:800; overflow-y:scroll;">Research Highlights</span>
+
+        <br>
+        <br>
+        <div style="margin-left: 2em;">
+            <span class="subtitle" style="font-weight:800; overflow-y:scroll;">Keywords: </span>
+            <span>Value Alignment, Bidirectional Alignment, Interactive Alignment</span>
+        </div>
+        <br>
+        <!-- ============ Research 1 ============ -->
+        <img class="user-picture" src="/assets/images/num1.png" height="28pt">
+        <span class="subtitle" style="font-weight:800; color:var(--brand-color)">Fundamentals in Human-AI Alignment</span>
+             
+        <!-- <br> -->
+        <div style="margin-left: 2em;">
+            <span class="subtitle" style="font-weight:800; overflow-y:scroll;">Keywords: </span>
+            <span>Value Alignment, Bidirectional Alignment, Interactive Alignment</span>
+        </div>
+        <!-- <br> -->
+        
+        <div style="margin-left: 4em;">
+            <li class="publist">
+                <span><strong>Towards Bidirectional Human-AI Alignment: A Systematic Review for Clarifications, Framework, and Future Directions</strong></span>
+                <br>
+                <span class="pubindent" ><strong style= "text-decoration: underline">Hua Shen</strong>, Tiffany Knearem, Reshmi Ghosh, Kenan Alkiek, Kundan Krishna, Yachuan Liu, Ziqiao Ma, Savvas Petridis, Yi-Hao Peng, Li Qiwei, Sushrita Rakshit, Chenglei Si, Yutong Xie, Jeffrey P. Bigham, Frank Bentley, Joyce Chai, Zachary Lipton, Qiaozhu Mei, Rada Mihalcea, Michael Terry, Diyi Yang, Meredith Ringel Morris, Paul Resnick, David Jurgens </span>
+                <br>
+                <span class="pubindent"><a class="post-link" href="https://arxiv.org/abs/2406.09264" target="_blank">[ArXiv:2406.09264]</a></span>
+                <span><a class="post-link" href="https://github.com/huashen218/bidirectional-alignment-reading-list/" target=”_blank”>[Reading List]</a></span>
+                <span><i class="fa-solid fa-star" style="color:#D84C19; font-weight:bold"></i><a class="post-link" href="https://bialign-workshop.github.io/#/" target=”_blank”>  [ICLR 2025 Workshop]</a></span>
+                <span><i class="fa-solid fa-star" style="color:#D84C19; font-weight:bold"></i><a class="post-link" href="https://bialign-workshop.github.io/#/" target=”_blank”>  [CHI 2025 SIG]</a></span>
+            </li> 
+
+            <li class="publist">
+                <span><strong>ValueCompass: A Framework for Measuring Contextual Value Alignment Between Human and LLMs</strong></span>
+                <br>
+                <span class="pubindent" ><strong style= "text-decoration: underline">Hua Shen</strong>, Tiffany Knearem, Reshmi Ghosh, Yu-Ju Yang, Nicholas Clark, Tanu Mitra*, Yun Huang* </span>
+                <br>
+                <span class="pubindent"><a class="post-link" href="/assets/files/valuecompass_2025.pdf" target="_blank">[ArXiv:2409.09586]</a></span>
+            </li>
+
+            <li class="publist">
+                <span><strong>Mind the Value-Action Gap: Do LLMs Act in Alignment with Their Values?</strong></span>
+                <br>
+                <span class="pubindent" ><strong style= "text-decoration: underline">Hua Shen</strong>, Nicholas Clark, Tanu Mitra </span>
+                <br>
+                <span class="pubindent"><a class="post-link" href="https://arxiv.org/pdf/2501.15463" target="_blank">[ArXiv:2501.15463]</a></span>
+            </li>
+        </div>
+
+
+        <!-- ============ Research 2 ============ -->
+        <img class="user-picture" src="/assets/images/num2.png" height="28pt"> <span class="subtitle" style="font-weight:800; color:var(--brand-color)">Aligning Humans with AI </span> (HCI/CSCW/Design-oriented)
+        
+        <br>
+        <div>
+            <span class="subtitle" style="font-weight:800; overflow-y:scroll;">Keywords: </span>
+            <span>enhances the explainability and usability of deployed AI systems through interaction, enabling humans to better understand and collaborate with AI</span>
+        </div>
+        <br>
+
+        <div style="margin-left: 4em;">
+            
+            <li class="publist">
+                <span><strong>ConvXAI<img src="../assets/images/convxai_logo.png" style="width:30px;height:20px;">: Delivering Heterogeneous AI Explanations via Conversations to Support Human-AI Scientific Writing</strong></span>
+                <br>
+                <span class="pubindent" ><strong style= "text-decoration: underline">Hua Shen</strong>, Chieh-Yang Huang, Tongshuang Wu, Ting-Hao (Kenneth) Huang</span>
+                <br>
+                <span class="pubindent">The 26th ACM Conference On Computer-Supported Cooperative Work And Social Computing - Demonstrations (<a class="post-link" href="https://cscw.acm.org/2023/" target=”_blank”>CSCW '23 Demo</a>)</span>
+                <br>
+                <span class="pubindent text-primary" style="color:#D84C19; font-weight:bold"><i class="fa-solid fa-trophy"></i> Best Demo Award </span>
+                <br>
+                <span class="pubindent"><a class="post-link" href="/assets/files/CSCW_2023_Demo.pdf">[Short Paper]</a></span>
+                <span><a class="post-link" href="https://arxiv.org/pdf/2305.09770">[Long Paper]</a></span>
+                <span><a class="post-link" href="https://github.com/huashen218/convxai">[System Code]</a></span>
+                <span><a class="post-link" href="https://github.com/huashen218/convxai/blob/main/notebook_unified_XAI_API/convxai_unified_api.ipynb">[Unified XAI API]</a></span>
+                <span><a class="post-link" href="https://youtu.be/0RXRusy_3D8">[Video]</a></span>
+                <span><a class="post-link" href="http://usefulxai.org:8080/">[Live Demo]</a></span>
+                </li>
+        
+
+
+            
+        </div>
+
+        
+
+
+        <!-- ============ Research 2 ============ -->
+        <img class="user-picture" src="/assets/images/num2.png" height="28pt"> <span class="subtitle" style="font-weight:800; color:var(--brand-color)">Aligning AI (Agents) with Humans</span> (AI/ML/NLP-oriented)
+        <br>
+        <div>
+            <span class="subtitle" style="font-weight:800; overflow-y:scroll;">Keywords: </span>
+            <span>integrate human feedback into AI, by developing approaches to measure human values and incorporating them into AI development and customization</span>
+        </div>
+
+        <div style="margin-left: 4em;">
+
+            <li class="publist">
+                <span><strong>MultiTurnCleanup: A Benchmark for Multi-Turn Spoken Conversational Transcript Cleanup</strong></span>
+                <br>
+                <span class="pubindent" ><strong style= "text-decoration: underline">Hua Shen</strong>, Vicky Zayats, Johann C. Rocholl, Daniel D. Walker, Dirk Padfield</span>
+                <br>
+                <span class="pubindent">The 2023 Conference on Empirical Methods in Natural Language Processing (<a class="post-link" href="https://2023.emnlp.org/" target=”_blank”>EMNLP '23 (Oral)</a>)</span>
+                <br>
+                <span class="pubindent text-primary" style="color:#D84C19; font-weight:bold"><i class="fa-solid fa-trophy"></i> Google Research Science Conference Scholarships</span>
+                <span class="pubindent text-primary" style="color:#D84C19; font-weight:bold"><i class="fa-solid fa-briefcase"></i>  Google AI Research Intern</span>
+                <!-- <br> -->
+                <br>
+                <span class="pubindent"><a class="post-link" href="https://aclanthology.org/2023.emnlp-main.613.pdf">[Paper]</a></span>
+                <span><a class="post-link" href="https://github.com/huashen218/MultiTurnCleanup.git">[Collected Dataset]</a></span>
+              </li>
+        
+
+
+              <li class="publist">
+                <strong>Improving Fairness in Speaker Verification via Group-adapted Fusion Network</strong>
+                <br>
+                <span class="pubindent" ><strong style= "text-decoration: underline">Hua Shen*</strong>, Yuguang Yang*, Guoli Sun, Ryan Langman, Eunjung Han, Jasha Droppo, Andreas Stolcke</span>
+                <br>
+                <span class="pubindent">2022 IEEE International Conference on Acoustics, Speech and Signal Processing (<a class="post-link" href="https://2022.ieeeicassp.org/" target=”_blank”>ICASSP '22</a>)</span>
+                <br>
+                <span class="pubindent text-primary" style="color:#D84C19; font-weight:bold"><i class="fa-solid fa-briefcase"></i>  Amazon AI Applied Scientist Intern</span>
+                <br>
+                <span class="pubindent"><a class="post-link" href="https://arxiv.org/abs/2202.11323">[Paper]</a></span>
+                <span><a class="post-link" href="https://github.com/huashen218/Voxceleb-Fairness">[GitHub]</a></span>
+                <span><a class="post-link" href="https://youtu.be/4QoHmQpG4Bc">[Video]</a></span>
+                <span><a class="post-link" href="/assets/files/submission-ICASSP22-presentation.pdf">[Slides]</a></span>
+                <span><a class="post-link" href="/assets/files/submission-ICASSP22-poster.pdf">[Poster]</a></span>
+              </li>
+        
+
+        </div>
+
+
+
+<!--         
+
+        <p>
+        With the goal of aligning AI and human values, my research strives to empower humans to interactively explain, evaluate, collaborate with AI, and further provide human feedback to enhance AI development. From a comprehensive view of <b>Bidirectional <span style="color:#DE4A4D">Humans</span><span style="color:#F9AB10;font-weight: 900;">&#8596</span><span style="color:#1271CA">AI</span> Alignment</b> (<a class="post-link" href="https://arxiv.org/abs/2406.09264" target="_blank">systematic review of 400+ papers</a>).
+        From a human-centered perspective, <img class="user-picture" src="/assets/images/num1.png" height="22pt"> my research enhances the explainability and usability of deployed AI systems through interaction, enabling humans to better understand and collaborate with AI (e.g., <a class="post-link" href="https://arxiv.org/pdf/2305.09770" target="_blank">ConvXAI</a> <span style="color:#999999">(CSCW'23 Best Demo)</span>, <a class="post-link" href="https://arxiv.org/pdf/2310.05292" target="_blank">HypoCompass</a> <span style="color:#999999">(AIED'24 Best Paper)</span>).
+        From an AI-centered perspective, <img class="user-picture" src="/assets/images/num2.png" height="22pt"> my research aims to integrate human feedback into AI, by developing approaches to measure human values and incorporating them into AI development and customization (e.g., <a class="post-link" href="https://aclanthology.org/2023.emnlp-main.613.pdf" target="_blank">MultiTurnCleanup</a> <span style="color:#999999">(EMNLP'23, Google Research Scholarship)</span>, <a class="post-link" href="https://arxiv.org/pdf/2202.11323" target="_blank">Speaker Fairness</a> <span style="color:#999999">(ICASSP'22, Amazon Alexa AI)</span>).
+        My research is rooted in <b>HCI</b> and intersects with various <b>AI</b> fields (e.g., NLP, speech, computer vision, and data science). 
+        I use <b>mixed research methods</b> to foster bidirectional alignment comprehensively.
+        </p>
+        <p>
+            <b>🌟 
+                <span style="color:#E08025">
+                    Welcome to our "<a class="post-link" href="https://bialign-workshop.github.io/#/" target="_blank">Bidirectional Human-AI Alignment</a>" <a class="post-link" href="https://iclr.cc/" target="_blank">ICLR 2025</a> Workshop and <a class="post-link" href="https://chi2025.acm.org/" target="_blank">CHI 2025</a> SIG!</b>
+                </span>
+        </p> -->
+
+
+
+
+    <!-- <br>
+    <br>
+    <span class="subtitle" style="font-weight:800; overflow-y:scroll;">NEWS</span>
+    <div class="video" id="video" style="overflow-y:auto">
+    <br> -->
+
+    <!-- <div class="video myBox" id="video">
+        <li style="text-align:left">
+            <span class="new-date">Jan-2025</span> Our <a class="post-link" href="https://bialign-workshop.github.io/#/" target="_blank">Bidirectional Human-AI Alignment</a> proposals have been accepted by <a class="post-link" href="https://chi2025.acm.org/" target="_blank">CHI 2025</a> Special Interest Group (HCI community) and <a class="post-link" href="https://iclr.cc/">ICLR 2025</a> Workshop (AI community)!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Jan-2025</span> Honored to serve as the <a class="post-link" href="https://chi2025.acm.org/" target="_blank">CHI 2025 Award Committee</a>. Thank you for having me!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Jan-2025</span> Our <a class="post-link" href="https://arxiv.org/pdf/2501.15463" target="_blank">Value-Action Gap</a> paper is out! An enjoyable and exciting project to assess the alignment between LLMs' values and actions.
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Dec-2024</span> Our <a class="post-link" href="https://bialign-workshop.github.io/#/">Bidirectional Human-AI Alignment Workshop</a> is accepted by <a class="post-link" href="https://iclr.cc/">ICLR 2025</a>! We're inviting and welcoming interdisciplinary researchers to submit and join <a class="post-link" href="https://join.slack.com/t/bi-alignworkshops/shared_invite/zt-2vpuf45n7-zP8DcmoRwjqfCxVQ4f5_Kw">our community</a>!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Dec-2024</span> Excited to see our <a class="post-link" href="/assets/files/nomatterxai.pdf" target="_blank">NoMatterXAI</a> work being accepted by <a class="post-link" href="https://aaai.org/conference/aaai/aaai-25/">AAAI 2025</a>!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Nov-2024</span> Giving talks on <a class="post-link" href="">Bidirectional Alignment</a> at Ph.D. seminars of <a class="post-link" href="https://infosci.cornell.edu/" target="_blank">Information Science at Cornell University</a>, HCI seminars at <a class="post-link" href="https://columbiahci.github.io/" target="_blank">Columbia University</a>, and <a class="post-link" href="https://www.khoury.northeastern.edu/" target="_blank">Northeastern University</a>, excited to see you and talk with you!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Nov-2024</span> Gave a talk about <a class="post-link" href="">Human-centered Alignment in Spoken LMs</a> at <a class="post-link" href="https://research.google/research-areas/speech-processing/" target="_blank">Google DeepMind</a> Hotword Research and Speaker, Voice & Language team, 
+            and a talk on <a class="post-link" href="">Bidirectional Alignment</a> at amazing <a class="post-link" href="">UW CIP center</a>, enjoyed the wonderful time and discussion!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Oct-2024</span> Joined <a class="post-link" href="https://ischool.uw.edu/people/faculty" target="_blank">UW iSchool</a> as a Postdoctoral Scholar, and gave a talk at our amazing <a class="post-link" href="https://www.raise.uw.edu/talksevents/" target="_blank">UW RAISE</a> center about our <a class="post-link" href="https://arxiv.org/abs/2406.09264" target="_blank">Bidirectional Alignment</a> research. Excited to return to Seattle and connect with amazing professors, researchers and friends!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Sep-2024</span> Honored to be selected for the <a class="post-link" href="https://www.inclusive.vt.edu/Programs/FDP/FFDP.html" target="_blank">Future Faculty Diversity Program</a> at Virginia Tech, where I gained valuable insights from the professors and leaders. Thank you for having me!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">July-2024</span> Serve as Associate Chairs (AC) for <a class="post-link" href="https://chi2025.acm.org/subcommittees/selecting-a-subcommittee/" target="_blank">'Education'</a> and <a class="post-link" href="https://chi2025.acm.org/subcommittees/selecting-a-subcommittee/" target="_blank">'Understanding People — Mixed' subcommittees of CHI 2025</a>. Gave a talk at UIUC about our <a class="post-link" href="https://arxiv.org/abs/2406.09264" target="_blank">bidirectional alignment research</a>. Thanks for the enjoyable time!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">July-2024</span> Our <a class="post-link" href="https://arxiv.org/pdf/2310.05292" target="_blank">HypoCompass</a> paper about LLM-baesd Programming Teachable Agent received the <a>Best Paper Award</a> and <a>Best Interactive Event Award</a>. Congrats to <a class="post-link" href="https://www.hcii.cmu.edu/people/qianou-christina-ma" target="_blank">Qianou (Christina)</a> on her first <a class="post-link" href="https://aied2024.cesar.school/" target=”_blank”>AIED</a> paper 🥳!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">July-2024</span> Our <a class="post-link" href="https://arxiv.org/pdf/2310.05292" target="_blank">HypoCompass</a> paper about LLM-baesd Programming Teachable Agent received the <a>Best Paper Award</a> and <a>Best Interactive Event Award</a>. Congrats to all authors!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">June-2024</span> Our <a class="post-link" href="https://arxiv.org/abs/2406.09264" target="_blank">Bidirectional Human-AI Alignment</a> survey paper is finally out! Thanks to all my amazing teammates and fabulous advisors, truly wonderful to collaborate with you all!
+        </li>
+        <div>
+            <p align="center">
+                
+                <iframe width="650" height="402" src="https://www.youtube.com/embed/videoseries?list=PLmXhjX5RLPjlP6CC8qi9bDfRs8Pu0QGuz&loop=1" title="Research Presentation Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                
+            </p>
+        </div>
+        <li style="text-align:left">
+            <span class="new-date">Mar-2024</span> Our <a class="post-link" href="https://arxiv.org/pdf/2310.05292.pdf" target="_blank">LLM-based Tutor Agent for Human Debugging</a> paper is accepted by <a class="post-link" href="https://aied2024.cesar.school/" target="_blank">AIED'24</a>. Congrats and Thanks to my dear and amazing coauthors&#129505;!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Mar-2024</span> Our <a class="post-link" href="https://hua-shen.org/assets/files/DSIIWA_CHI_2024.pdf" target="_blank">Design Space for Intelligent and Interactive Writing Assistants</a> paper is accepted by <a class="post-link" href="https://chi2024.acm.org/" target="_blank">CHI'24</a>. Congrats and Thanks to our super cool teams and leads&#129303;!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Jan-2024</span> Happy to serve as an AC for the <a class="post-link" href="https://chi2024.acm.org/for-authors/late-breaking-work/" target="_blank">CHI 2024 Late Breaking Works</a> and a mentor for <a class="post-link" href="https://2024.naacl.org/" target="_blank">NAACL Student Research Workshop 2024</a>☺️. 
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Dec-2023</span> Attended <a class="post-link" href="https://2023.emnlp.org/" target="_blank">EMNLP'23</a> in person and give a oral talk for my <a class="post-link" href="https://aclanthology.org/2023.emnlp-main.613/" target="_blank">Goolge intern paper</a> and a live demo for my collaborative <a class="post-link" href="https://arxiv.org/pdf/2308.04030.pdf" target="_blank">Gentopia.AI work</a>. Super enjoyed the time learning from excellent researchers and having fun with my loving friends at Singapore!&#129303;!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Nov-2023</span> Honored to be selected as one of the <a class="post-link" href="https://presidentspostdoc.umich.edu/" target="_blank">President's Postdoctoral Fellowship Program (PPFP) Candidates in UMich</a> and to give a talk about my latest work! Really enjoyed talking with so many amazing professors in <a class="post-link" href="https://cse.engin.umich.edu/people/" target="_blank">UMich CSE</a>, truly appreciate you ALL and my mentors' support&#129505;!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Nov-2023</span> Participating and giving a lightning talk at <a class="post-link" href="https://datascience.uchicago.edu/research/postdoctoral-programs/rising-stars-in-data-science-2/2023-rising-stars/" target="_blank">Rising Stars of Data Science</a> located at <a class="post-link" href="https://datascience.uchicago.edu/about/leadership-staff/" target="_blank">UChicago</a>. Thanks for having me and meeting you all here &#129303;!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Oct-2023</span> Gave a talk at <a class="post-link" href="https://misc.si.umich.edu/" target="_blank">MISC</a> at <a class="post-link" href="https://umich.edu/" target="_blank">Umich</a>. Thank you for the wonderful time and discussion with the amazing professors, researchers, and friends here &#129505;!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Oct-2023</span> Received the <a class="post-link" href="" target="_blank">Best Demo</a> in <a class="post-link" href="https://cscw.acm.org/2023/index.php/posters-and-demos/" target="_blank">CSCW 2023</a> conference for our <a class="post-link" href="https://hua-shen.org/assets/files/ConvXAI_Arxiv_Long.pdf" target="_blank">ConvXAI</a> work. Thanks a loooot for all your support &#129505;!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Oct-2023</span> Received the <a class="post-link" href="https://buildyourfuture.withgoogle.com/scholarships" target="_blank">Google Research Science Conference Scholarships</a> for our <a class="post-link" href="https://2023.emnlp.org/" target="_blank">EMNLP 2023</a> <a class="post-link" href="https://browse.arxiv.org/pdf/2305.12029.pdf" target="_blank">MultiTurnCleanup</a> work. Thank you for Google Research and my dear mentors and managers for supporting me!⭐!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Oct-2023</span> Selected as one of the <a class="post-link" href="https://datascience.uchicago.edu/research/postdoctoral-programs/rising-stars/#description" target="_blank">2023 Rising Stars of Data Science</a> hosted by UChicago and UC San Diego. Truly appreciate my dear friend who brought me this great news and dear advisors who recommended me &#129505;!
+        </li>
+
+        <li style="text-align:left">
+            <span class="new-date">Oct-2023</span> Our <a class="post-link" href="https://ai.google/discover/research/" target="_blank">Google AI Research</a> intern work <a class="post-link" href="https://browse.arxiv.org/pdf/2305.12029.pdf" target="_blank">MultiTurnCleanup</a>, and a LLM-agents Demo <a class="post-link" href="https://browse.arxiv.org/pdf/2308.04030.pdf" target="_blank">Gentopia.AI</a> (collaborating with many amazing researchers) have been accepted by <a class="post-link" href="https://2023.emnlp.org/" target="_blank">EMNLP 2023</a> main conference and system demonstration. Thanks to my dear mentors and coauthors &#129505;!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Sep-2023</span> Starting my Postdoc research at <a class="post-link" href="https://umich.edu/" target="_blank">Umich</a> and enjoying the wonderful people and life&#127873; at Ann Arbor&#127774;!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Aug-2023</span> Our paper <a class="post-link" href="/assets/files/hcomp2023.pdf" target="_blank">Does Human Collaboration Enhance the Accuracy of Identifying LLM-Generated Deepfake Texts?</a> being accepted by <a class="post-link" href="https://www.humancomputation.com/" target="_blank">HCOMP2023</a>!🥳 See our new study conducting human collaborative evaluation (i.e., turing test resemblance) on distinguishing LLM-generated v.s. Human-written texts! 
+        </li>
+
+        <li style="text-align:left">
+            <span class="new-date">Jul-2023</span> Invited to be the PC member of <a class="post-link" href="https://2023.emnlp.org/" target="_blank">EMNLP 2023</a> Industry Track. Thanks for the invitation!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Jul-2023</span> Excited to give an on-site talk @<a class="post-link" href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a> and enjoyed the amazing time meeting with the terrific professors and students in <a class="post-link" href="https://autonlab.org/" target="_blank">Auton Lab</a>. Thank you all!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Jun-2023</span> I'll attend <a class="post-link" href="https://2023.aclweb.org/" target="_blank">ACL 2023</a> in person @Toronto during July 9-14. I'm excited to meet my old and new NLP friends again, and feel free to DM me to meet up!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Jun-2023</span> Our <a class="post-link" href="/assets/files/ConvXAI_Arxiv.pdf">ConvXAI<img src="../assets/images/convxai_logo.png" style="width:30px;height:20px;"></a> paper is accepted by <a class="post-link" href="https://cscw.acm.org/2023/index.php/submit-demos/" target="_blank">CSCW 2023 Demo</a>!🥳 Please see the project combo (i.e., <a class="post-link" href="https://hua-shen.org/src/publications.html">papers, system code, unified XAI API, live demo, and video</a>) of this exciting work :)
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Jun-2023</span> Excited to serve on the PC member of the <a class="post-link" href="https://sites.google.com/view/aihci/home?authuser=0">ICML 2023 AI and HCI Workshop</a>, and reviewer of <a class="post-link" href="https://2023.emnlp.org/">EMNLP 2023</a>. Thanks for your invitation!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">May-2023</span> Thrilled to give an on-site talk @<a class="post-link" href="https://www.princeton.edu/">Princeton University</a> and enjoyed the wonderful time meeting with amazing professors and students in Looking Glass Lab and <a class="post-link" href="https://visualai.princeton.edu/">Visual AI Lab</a>!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Mar-2023</span> Our <a class="post-link" href="https://arxiv.org/abs/2302.07346">ScatterShot</a> paper got <a class="post-link" href="">Best Paper Honorable Mention Award</a>. Thank you to all my dear co-authors and the IUI chairs!
+        </li>
+
+        <br>
+        
+        <li style="text-align:left">
+            <span class="new-date">Mar-2023</span> Our paper,  <a class="post-link" href="https://arxiv.org/pdf/2303.06333.pdf">Parachute: Evaluating Interactive Human-LM Co-writing Systems</a> is accepted by <a class="post-link" href="https://in2writing.glitch.me/">CHI 2023 In2Writing Workshop</a>. Thanks to my advisors' support.
+            Thrilled to meet my HCI friends @Hamburg this April/2023!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Feb-2023</span> Our paper, <a class="post-link" href="https://arxiv.org/abs/2302.07346">ScatterShot: Interactive In-context Example Curation for Text Transformation</a> is accepted by <a class="post-link" href="https://iui.acm.org/2023/">IUI 2023</a>. Thank you to all my co-authors!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Jan-2023</span> I gave a talk @<a class="post-link" href="https://ai.google/research/">Google Research</a> for my intern project. Thanks for my dear mentors' and friends' participation and support!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Dec-2022</span> I serve as a <a class="post-link" href="">PC member</a> of the NLP Interpretability Track for <a class="post-link" href="https://2023.aclweb.org/">ACL 2023</a>. Glad to review amazong works submitted to ACL 2023!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Sep-2022</span> I'm glad to give a talk at the <a class="post-link" href="https://nlp.nd.edu/nlplus/2022/09/26/shen.html">Notre Dame NL+</a> seminar on and share our latest work on Human-centered Explainable AI. Look forward to meeting and discussing with Notre Dame NLPer friends!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Sep-2022</span> I will join <a class="post-link" href="https://ai.google/research/">Google AI</a> as a researcher intern during the Fall semester. Would love to meet more old and new friends at Seattle again!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Aug-2022</span> Accepted the reviewer invitation from the <a class="post-link" href="https://humaneval-workshop.github.io/">NeurIPS 2022 Workshop on Human Evaluation of Generative Models</a>. Looking forward to reviewing the papers in this amazing workshop!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Aug-2022</span> I passed my Ph.D. comprehensive exam and become a Ph.D. candidate! I appreciate all the valuable feedbacks from my dear committee members including <a class="post-link" href="https://crowd.ist.psu.edu/">Dr. Ting-hao (Kenneth) Huang</a>, <a class="post-link" href="https://mrosson.ist.psu.edu/">Dr. Mary Beth Rosson</a>, <a class="post-link" href="https://clgiles.ist.psu.edu/">Dr. C. Lee Giles</a>, <a class="post-link" href="https://www.bellisario.psu.edu/people/individual/s.-shyam-sundar">Dr. S. Shyam Sundar</a>, <a class="post-link" href="https://www.cs.cmu.edu/~sherryw/">Dr. Sherry Tongshuang Wu</a>. Thank you all!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">July-2022</span> I'm serving as a review <a class="post-link" href="">committee member</a> for the Interpretability track at <a class="post-link" href="https://2022.emnlp.org/">EMNLP 2022</a>. Thank the co-chairs for your nice invitation!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">July-2022</span> I'm attending <a class="post-link" href="https://2022.naacl.org/">NAACL 2022</a> in person. Excited to meeting amazing NLPer friends again at Seattle!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">May-2022</span> I'm joining <a class="post-link" href="https://www.amazon.science/tag/alexa">Amazon Alexa AI ASR Language Modeling</a> team as an applied scientist intern in May and will move to Seattle during the summer!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Apr-2022</span> I'm attending <a class="post-link" href="https://chi2022.acm.org/">CHI'22</a> in person. Looking forward to hanging out with my old and new friends in New Orleans!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Feb-2022</span> Our short paper, <a class="post-link" href="/assets/files/ACL2022_LimitedInk.pdf">Are Shortest Rationales the Best Explanations for Human Understanding?</a> is accepted by <a class="post-link" href="https://www.2022.aclweb.org/">ACL 2022 main conference</a>. Thank you, my co-authors and advisor!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Jan-2022</span> Our paper, <a class="post-link" href="https://arxiv.org/abs/2202.11323">Improving Fairness in Speaker Verification via Group-adapted Fusion Network</a> is accepted by <a class="post-link" href="https://2022.ieeeicassp.org/">ICASSP 2022</a>. Thank you to all my advisors!
+        </li>
+
+        <div>
+            <p align="center">
+                
+                <iframe width="650" height="402" src="https://www.youtube.com/embed/videoseries?list=PLmXhjX5RLPjlP6CC8qi9bDfRs8Pu0QGuz&loop=1" title="Research Presentation Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                
+            </p>
+        </div>
+
+        <li style="text-align:left">
+            <span class="new-date">Aug-2021</span> I am fortunately nominated for <a class="post-link" href="https://www.microsoft.com/en-us/research/academic-program/phd-fellowship/#!canada-us">Microsoft Research PhD Fellowship</a> by the office of the department chair at The PennState University. Thank you!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">May-2021</span> Our paper on <a class="post-link" href="https://arxiv.org/abs/2103.14973">analyzing gaps between user needs and NLP explanations</a> is accepted by <a class="post-link" href="https://hcxai.jimdosite.com/">CHI'21 HCXAI Workshop</a> as an oral presentation. Our <a class="post-link" href="https://arxiv.org/abs/2103.14973">Paper</a> and the <a class="post-link" href="https://human-centered-exnlp.github.io/">Website</a> are available!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Mar-2021</span> I will join <a class="post-link" href="https://www.amazon.science/tag/alexa">Amazon Alexa AI</a> research group as an <a class="post-link" href="https://www.amazon.science/tag/alexa">Applied Scientist Intern</a> in 2021 summer! I appreciate everyone who helped me and look forward to joining the research team to learn!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Feb-2021</span> I serve as a PC member of the NLP Interpretability Track for <a class="post-link" href="https://2021.aclweb.org/">ACL-IJCNLP 2021</a>. Grateful to my First-time ACL reviewer mentor, <a class="post-link" href="https://homes.cs.washington.edu/~marcotcr/">Dr. Marco Tulio Ribeiro</a>, Thank you, ACL'21!
+        </li>
+        <li style="text-align:left">
+            <span class="new-date">Feb-2021</span> PennState IST award for Graduate Student Travel Grant on our <a class="post-link" href="https://arxiv.org/abs/2008.11721">AI Interpretation work</a>. Thank you, IST!
+        </li>
+
+        <li>
+            <span class="new-date">Oct-2020</span> <a class="post-link" href="https://news.psu.edu/story/636629/2020/10/26/research/users-don%E2%80%99t-understand-computer-explanations-image-labeling-errors?fbclid=IwAR1WIcDGvzJpH2kHAaiRhaw5j4v3AFS38duqM4IfgaWROqrwFXNXpiK78yQ">Penn State News</a> wrote a nice post about our <a class="post-link" href="https://arxiv.org/abs/2008.11721">AI Interpretation work</a>. Thank you, PennState!
+        </li>
+
+        <li>
+            <span class="new-date">Oct-2020</span> Our paper on <a class="post-link" href="https://arxiv.org/abs/2008.11721">usefulness evaluatation for AI interpretations</a> is accepted by <a class="post-link" href="https://www.humancomputation.com">HCOMP 2020</a>!
+            I will present our work with a talk at <a class="post-link" href="https://www.humancomputation.com/program.html">HCOMP</a> on Oct 28, 2020. 
+        </li>
+    
+        <li>
+            <span class="new-date">May-2020</span> I passed the Ph.D. Qualifying Exam of <a class="post-link" href="https://ist.psu.edu/">IST College at PennState</a>!
+        </li>
+
+    </div> -->
+
+
+
+    </div>
+    
+
+
+</div>
+
+
+
+
