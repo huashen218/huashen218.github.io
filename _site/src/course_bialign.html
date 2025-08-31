@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hua Shen</title>
+    <meta name="description" content="description.">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="http://localhost:4000/">
+    <link rel="alternate" type="application/rss+xml" title="Hua Shen" href="/feed.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- <link rel="icon" href="/assets/images/favicon-32x32.png" sizes="16x16" type="image/png"> -->
+    <link rel="icon" href="/assets/images/lab_icon.png" sizes="16x16" type="image/png">
+</head>
+
+  <body>
+
+    
+
+<header class="site-header" role="banner">
+    <div class="wrapper">
+        <div class="site-header-float">
+        <a class="site-title" href="/index.html" >Hua Shen</a>
+        <nav class="site-nav">
+            <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+                <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+            </span>
+
+            <div class="trigger">
+            <span class="nav-list-title">Menu:</span>
+                <nav>
+    <ul class="nav-list ">
+        <li><a class="page-link" href="/index.html" style="font-size: 20px">About</a></li>
+        <li><a class="page-link" href="/src/publications.html" style="font-size: 20px">Publications</a></li>
+        <li><a class="page-link" href="/src/teaching.html" style="font-size: 20px">Teaching</a></li>
+        <li><a class="page-link" href="/src/course_bialign.html" style="font-size: 20px">BiAlign Course</a></li>
+        <li><a class="page-link" href="/src/misc.html" style="font-size: 20px">Talks</a></li>
+        <li><a class="page-link" href="/src/lab.html" style="font-size: 20px">BiAlign Lab</a></li>
+    </ul>
+</nav>
+
+            </div>
+        </nav>
+        </div>
+    </div>
+</header>
+
+    <main class="page-content" aria-label="Content">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+<head>
+
+    <script>
+        // Search functionality
+        const searchBox = document.getElementById('searchBox');
+        const table = document.getElementById('scheduleTable');
+        const rows = table.querySelectorAll('tbody tr');
+
+        searchBox.addEventListener('input', function () {
+            const searchTerm = this.value.toLowerCase();
+
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                const filter = this.getAttribute('data-filter');
+
+                rows.forEach(row => {
+                    if (filter === 'all') {
+                        row.style.display = '';
+                    } else {
+                        const category = row.getAttribute('data-category');
+                        if (category === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    }
+                });
+
+                // Clear search when filtering
+                searchBox.value = '';
+            });
+        });
+
+        // Smooth hover effects for table rows
+        rows.forEach(row => {
+            row.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateX(5px)';
+                this.style.transition = 'transform 0.2s ease';
+            });
+
+            row.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+
+        // Add loading animation on page load
+        window.addEventListener('load', function () {
+            const container = document.querySelector('.container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+
+            setTimeout(() => {
+                container.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+
+    <style>
+        :root {
+            --brand-color: #440079;
+            --link-color: #440079;
+            --brand-color-hover: #FB9E09;
+            --font-size: 15pt;
+            --font-size-section-title: 20pt;
+            --line-height: 1.8;
+            --nav-font-size: 16pt;
+            --font-family: "Palatino", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .subsection-title {
+            text-align: left;
+            font-weight: 888;
+            color: var(--brand-color); 
+            font-size: var(--font-size-section-title);
+            /* margin-bottom: 8px; */
+            margin-top: 8px;
+        }
+
+        .subsubsection-title {
+            font-weight: 600;
+            color: var(--brand-color);
+            font-size: var(--font-size);
+        }
+
+        .course-pagewrapper {
+            max-width: 1288px;
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 50px;
+            padding-left: 50px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--brand-color);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .header-logos {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .header-logo {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        h1 {
+            color: var(--brand-color);
+            /* margin-bottom: 10px; */
+        }
+
+        .subtitle {
+            font-size: var(--font-size);
+            color: #666;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .course-info {
+            flex: 1;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid var(--brand-color);
+            align-items: center;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--brand-color);
+            margin-bottom: 5px;
+            font-size: var(--font-size);
+        }
+
+        .course-details-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            align-items: stretch;
+        }
+
+        .instructor-section {
+            flex: 0 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--brand-color);
+        }
+
+        .instructor-profile {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .instructor-image {
+            width: 121px;
+            height: 121px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--brand-color-hover);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .instructor-details {
+            flex: 1;
+        }
+
+        .instructor-name {
+            margin: 0 0 5px 0;
+            font-size: 1.5em;
+            color: var(--brand-color);
+        }
+
+        .instructor-name a {
+            color: var(--brand-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .instructor-name a:hover {
+            color: var(--brand-color-hover);
+        }
+
+        .instructor-title {
+            margin: 0;
+            font-size: var(--font-size);
+            color: #666;
+            font-weight: 500;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule-table th {
+            background: var(--brand-color);
+            color: white;
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .schedule-table th:nth-child(3) {
+            width: 10%;
+        }
+        .schedule-table th:nth-child(1) {
+            width: 0.5%;
+        }
+        .schedule-table th:nth-child(2) {
+            width: 1%;
+            min-width: 1%;
+            max-width: 1%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+
+        .schedule-table td {
+            padding: 15px 12px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        .schedule-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .week-number {
+            font-weight: 600;
+            color: var(--brand-color);
+            /* background: #ffeaea; */
+            text-align: center;
+            border-radius: 4px;
+            width: 5%;
+            /* height: 30px; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .date {
+            font-weight: 500;
+            color: #333;
+            white-space: nowrap;
+            width: 1%;
+            min-width: 1%;
+            max-width: 1%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .theme-null {
+            font-weight: 600;
+            /* color: var(--brand-color); */
+            text-align: center;
+            padding: 4px 8px;
+            border-radius: 12px;
+            background: #f0f0f0;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .no-class {
+            color: #888;
+            font-style: italic;
+        }
+
+        .theme-no-class {
+            font-weight: 600;
+            color: var(--brand-color);
+            text-align: center;
+            padding: 4px 8px;
+            border-radius: 12px;
+            background: #F9F9F9;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .theme-exam {
+            font-weight: 600;
+            color: var(--brand-color);
+            text-align: center;
+            padding: 4px 8px;
+            border-radius: 12px;
+            background: #FBCB65;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .theme-foundations {
+            font-weight: 800;
+            color: var(--brand-color);
+            text-align: center;
+            padding: 4px 8px;
+            border-radius: 12px;
+            background: #E7DFEF;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .theme-methods {
+            font-weight: 800;
+            color: var(--brand-color);
+            text-align: center;
+            padding: 4px 8px;
+            border-radius: 12px;
+            background: #BBA2CE;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .theme-practice {
+            font-weight: 800;
+            /* color: var(--brand-color); */
+            color: white;
+            text-align: center;
+            padding: 4px 8px;
+            border-radius: 12px;
+            background: #916BB0;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .rounded-tag {
+            display: inline-block;
+            background: #FBCB65;
+            color: var(--brand-color);
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin: 6px 0px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .rounded-tag:hover {
+            background: var(--brand-color-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .rounded-tag.orange {
+            background: var(--brand-color-hover);
+        }
+
+        .rounded-tag.orange:hover {
+            background: #e68900;
+        }
+
+
+
+        .slides-link {
+            color: var(--brand-color);
+            text-decoration: none;
+            font-size: var(--font-size);
+            /* background: #ffeaea; */
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 5px;
+            transition: background 0.2s;
+        }
+
+        .slides-link:hover {
+            background: #ffcccc;
+            text-decoration: underline;
+        }
+
+        .readings {
+            color: #555;
+            font-size: var(--font-size);
+        }
+
+        .readings-label {
+            font-weight: 600;
+            color: var(--brand-color);
+            margin-bottom: 5px;
+        }
+
+        .reading-item {
+            margin-bottom: 8.8px;
+            line-height: 1.2;
+            font-size: 12.8pt;
+        }
+
+        .reading-item a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .reading-item a:hover {
+            text-decoration: underline;
+        }
+
+        .guest-lecture {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a5a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+
+        .search-box {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: var(--font-size);
+            transition: border-color 0.2s;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--brand-color);
+        }
+
+        .filter-buttons {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: var(--font-size);
+        }
+
+        .filter-btn.active {
+            background: var(--brand-color);
+            color: white;
+            border-color: var(--brand-color);
+        }
+
+        .filter-btn:hover {
+            background: #e9ecef;
+        }
+
+        .filter-btn.active:hover {
+            background: #660000;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-text {
+                text-align: center;
+            }
+
+            .header-logos {
+                justify-content: center;
+            }
+
+            .course-details-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .instructor-section {
+                flex: none;
+            }
+
+            .schedule-table {
+                font-size: 14px;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 10px 8px;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+
+</head>
+
+
+<div class="course-pagewrapper">
+
+    <br>
+
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1 class="post-title" itemprop="name headline">Topics in CS – Bidirectional Human-AI Alignment</h1>
+                    <h1 class="post-title" itemprop="name headline">(CSCI-SHU 205)</h1>
+                    <p class="subtitle">Autumn 2025 | New York University Shanghai</p>
+                </div>
+                <div class="header-logos">
+                    <img src="../assets/images/nyush_logo.png" alt="NYU Shanghai Logo" class="header-logo">
+                    <img src="../assets/images/nyu_logo_horizontal.png" alt="NYU Logo" class="header-logo">
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Details Row -->
+        <div class="course-details-row">
+            <!-- Instructor Info -->
+            <div class="instructor-section">
+                <div class="instructor-profile">
+                    <img src="../assets/images/profile.png" alt="Hua Shen" class="instructor-image">
+                    <div class="instructor-details">
+                        <p class="instructor-title">Instructor</p>
+                        <h3 class="instructor-name"><a href="https://hua-shen.org" target="_blank">Hua Shen</a></h3>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Info -->
+            <div class="course-info">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Time</span>
+                        <span class="subtitle">Mon/Wed 2:15 - 3:30 PM</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Location</span>
+                        <span class="subtitle">EB227</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Zoom</span>
+                        <span style=" color: #666; font-size: 15px;"><a href="https://nyu.zoom.us/my/hua.shen">https://nyu.zoom.us/my/hua.shen (Passcode: enQb9h)</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-info">
+            <div class="subsection-title"> <span>Welcome! &#129303;</span> </div>
+            <div class="readings">
+                This course will provide an overview of Bidirectional Human-AI Alignment, emphasizing both how AI systems can be designed to reflect human values and how humans can be empowered to critically engage and collaborate with AI. Topics include human-centered data collection and curation, reinforcement learning from human feedback (RLHF), human-in-the-loop evaluation, and human-AI interaction. By focusing on this two-way alignment, you will be equipped to shape AI systems responsibly while developing the skills to navigate and contribute to both HCI and AI research.
+            </div>
+        </div>
+
+
+        <div class="subsection-title"> <span>Class Schedule</span> </div>
+        <div class="readings">
+            See <a href="https://drive.google.com/file/d/1RTjH5z75xvbYjccjkpC7T_2sv_nmfKFV/view?usp=sharing" target="_blank"><b>NYU Shanghai's Course Syllabus</b></a> for the tentative schedule, which is subject to change.
+        </div>
+
+        <table class="schedule-table" id="scheduleTable">
+            <thead>
+                <tr>
+                    <th>Week</th>
+                    <th>Date</th>
+                    <th>Theme</th>
+                    <th>Topics</th>
+                    <th>Reading Materials</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">1</div>
+                    </td>
+                    <td class="date">Sep 1 (M) </td>
+                    <td class="theme-foundations">Foundations</td>
+                    <td>
+                        <div class="topic"><b>Overview</b>: Introduction to Human-AI Alignment</div>
+                        <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">1</div>
+                    </td>
+                    <td class="date">Sep 3 (W)</td>
+                    <td class="theme-foundations">Foundations</td>
+                    <td>
+                        <div class="topic"><b>Overview</b>: Evolving Challenges of AI Alignment and Human's Role</div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                        <div class="rounded-tag">🎓 Project Proposal Start</div>
+                    </td>
+                    <td>
+                        <div class="readings">
+                            <div class="reading-item">• Shen, Hua, Tiffany Knearem et al. <a href="https://arxiv.org/pdf/2406.09264?" target="_blank">"Towards bidirectional human-ai alignment: A systematic review for clarifications, framework, and future directions."</a> arXiv:2406.09264. </div>
+                            <div class="reading-item">• Anwar, Usman, Abulhair Saparov et al. <a href="https://arxiv.org/pdf/2406.09264?" target="_blank">"Foundational challenges in assuring alignment and safety of large language models."</a> arXiv:2404.09932.</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">2</div>
+                    </td>
+                    <td class="date">Sep 8 (M)</td>
+                    <td class="theme-foundations">Foundations</td>
+                    <td>
+                        <div class="topic"><b>Values & Morals in LLMs</b>: Theories and Evaluation </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td>
+                        <div class="readings">
+                            <div class="reading-item">• Gabriel, Iason. <a href="https://link.springer.com/content/pdf/10.1007/s11023-020-09539-2.pdf" target="_blank">"Artificial intelligence, values, and alignment."</a> Minds and Machines, 2020.</div>
+                            <div class="reading-item">• Sorensen, Taylor, Jared Moore et al. <a href="https://arxiv.org/pdf/2402.05070" target="_blank">"A roadmap to pluralistic alignment."</a> ICML 2024.</div>
+                            <div class="reading-item">• Ye, Haoran, Jing Jin, Yuhang Xie, Xin Zhang, and Guojie Song. <a href="https://arxiv.org/pdf/2505.08245" target="_blank">"Large language model psychometrics: A systematic review of evaluation, validation, and enhancement."</a> arXiv:2505.08245.</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">2</div>
+                    </td>
+                    <td class="date">Sep 10 (W) </td>
+                    <td class="theme-foundations">Foundations</td>
+                    <td>
+                        <div class="topic"><b>Values & Morals in LLMs</b>: Misalignment Mitigation and Social Impacts </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td>
+                        <div class="readings">
+                            <div class="reading-item">• Feng, Shangbin, Taylor Sorensen, Yuhan Liu, Jillian Fisher, Chan Young Park, Yejin Choi, and Yulia Tsvetkov. <a href="https://arxiv.org/pdf/2406.15951?" target="_blank">"Modular pluralism: Pluralistic alignment via multi-llm collaboration."</a> arXiv:2406.15951.</div>
+
+                            <div class="reading-item">• Shen, Hua, Nicholas Clark, and Tanushree Mitra. <a href="https://arxiv.org/pdf/2501.15463?" target="_blank">"Mind the Value-Action Gap: Do LLMs Act in Alignment with Their Values?."</a> arXiv:2501.15463.</div>
+
+                            <div class="reading-item">• AlKhamissi, Badr, Muhammad ElNokrashy, Mai AlKhamissi, and Mona Diab. <a href="https://arxiv.org/pdf/2402.13231" target="_blank">"Investigating cultural alignment of large language models."</a> arXiv:2402.13231.</div>
+
+                            <div class="reading-item">• Rao, Abhinav, Aditi Khandelwal, Kumar Tanmay, Utkarsh Agarwal, and Monojit Choudhury. <a href="https://arxiv.org/pdf/2310.07251" target="_blank">"Ethical reasoning over moral alignment: A case and framework for in-context ethical policies in LLMs."</a> arXiv:2310.07251.</div>
+
+                            <div class="reading-item">• Santurkar, Shibani, Esin Durmus, Faisal Ladhak, Cinoo Lee, Percy Liang, and Tatsunori Hashimoto. <a href="https://proceedings.mlr.press/v202/santurkar23a/santurkar23a.pdf" target="_blank">"Whose opinions do language models reflect?."</a> ICML 2023.</div>
+
+                            <div class="reading-item">• Kapoor, Sayash, Rishi Bommasani, Kevin Klyman, Shayne Longpre, Ashwin Ramaswami, Peter Cihon, Aspen Hopkins et al. <a href="https://arxiv.org/pdf/2403.07918?" target="_blank">"On the societal impact of open foundation models."</a> arXiv:2403.07918. </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">3</div>
+                    </td>
+                    <td class="date">Sep 15 (M)</td>
+                    <td class="theme-foundations">Foundations</td>
+                    <td>
+                        <div class="topic"><b>Paper Presentation</b>: Values and Morals in LLMs </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+
+                <tr data-category="guest">
+                    <td>
+                        <div class="week-number">3</div>
+                    </td>
+                    <td class="date">Sep 17 (W)</td>
+                    <td class="theme-methods">Methods</td>
+                    <td>
+                        <div class="topic"><b>Data is Gold</b>: Human-in-the-loop Collection and Co-Annotation </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td>
+                        <div class="readings">
+                            <div class="reading-item">• Kim, Sungdong, Sanghwan Bae, Jamin Shin, Soyoung Kang, Donghyun Kwak, Kang Min Yoo, and Minjoon Seo. <a href="https://arxiv.org/pdf/2305.13735">"Aligning large language models through synthetic feedback."</a> EMNLP 2023. </div>
+
+                            <div class="reading-item">• Li, Minzhi, Taiwei Shi, Caleb Ziems, Min-Yen Kan, Nancy F. Chen, Zhengyuan Liu, and Diyi Yang. <a href="https://arxiv.org/pdf/2310.15638">"Coannotating: Uncertainty-guided work allocation between human and large language models for data annotation."</a> EMNLP 2023. </div>
+                            
+                            <div class="reading-item">• Aher, Gati V., Rosa I. Arriaga, and Adam Tauman Kalai. <a href="https://proceedings.mlr.press/v202/aher23a/aher23a.pdf">"Using large language models to simulate multiple humans and replicate human subject studies."</a> ICML 2023. </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr data-category="project">
+                    <td>
+                        <div class="week-number">4</div>
+                    </td>
+                    <td class="date">Sep 22 (M)</td>
+                    <td class="theme-methods">Methods</td>
+                    <td>
+                        <div class="topic"><b>Data is Gold</b>: Human Preference Styles </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                        <div class="rounded-tag">🎓 Project Proposal Due</div>
+                    </td>
+                    <td>
+                        <div class="readings">
+                            <div class="reading-item">• Bai, Yuntao, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones, Anna Chen et al. <a href="https://ai-plans.com/file_storage/4f32fa39-3a01-46c7-878e-c92b7aa7165f_2212.08073v1.pdf">"Constitutional ai: Harmlessness from ai feedback."</a> arXiv:2212.08073.</div>
+
+                            <div class="reading-item">• Shen, Hua, Vicky Zayats, Johann C. Rocholl, Daniel D. Walker, and Dirk Padfield. <a href="https://arxiv.org/pdf/2305.12029">"Multiturncleanup: A benchmark for multi-turn spoken conversational transcript cleanup."</a> EMNLP 2023.</div>
+                            
+                            <div class="reading-item">• Huang, Saffron, Divya Siddarth, Liane Lovitt, Thomas I. Liao, Esin Durmus, Alex Tamkin, and Deep Ganguli. <a href="https://dl.acm.org/doi/pdf/10.1145/3630106.3658979">"Collective constitutional ai: Aligning a language model with public input."</a> FAccT 2024. </div>
+                            
+                            <div class="reading-item">• Gordon, Mitchell L., Michelle S. Lam, Joon Sung Park, Kayur Patel, Jeff Hancock, Tatsunori Hashimoto, and Michael S. Bernstein. <a href="https://dl.acm.org/doi/pdf/10.1145/3491102.3502004">"Jury learning: Integrating dissenting voices into machine learning models."</a> CHI 2022. </div>
+
+                        </div>
+                    </td>
+                </tr>
+
+                <tr data-category="guest">
+                    <td>
+                        <div class="week-number">4</div>
+                    </td>
+                    <td class="date">Sep 24 (W)</td>
+                    <td class="theme-methods">Methods</td>
+                    <td>
+                        <div class="topic"><b>Data is Gold</b>: Human Preference Substance and Validation </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                        <div class="rounded-tag">🎯 Assignment 1 Released <br> (LLM Post-Training Alignment)</div>
+                    </td>
+                    <td>
+                        <div class="readings">
+                            <div class="reading-item">• Bradley, Herbie, Andrew Dai, Hannah Teufel, Jenny Zhang, Koen Oostermeijer, Marco Bellagente, Jeff Clune, Kenneth Stanley, Grégory Schott, and Joel Lehman. <a href="https://arxiv.org/pdf/2310.13032">"Quality-diversity through AI feedback."</a> ICLR 2024.</div>
+
+                            <div class="reading-item">• Zhao, Dora, Jerone TA Andrews, Orestis Papakyriakopoulos, and Alice Xiang. <a href="https://arxiv.org/pdf/2407.08188">"Position: measure dataset diversity, don't just claim it."</a> ICML 2024.</div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr data-category="lectures">
+                    <td>
+                        <div class="week-number">5</div>
+                    </td>
+                    <td class="date">Sep 29 (M)</td>
+                    <td class="theme-methods">Methods</td>
+                    <td>
+                        <div class="topic"><b>Post-Training for Alignment</b>: LLM Prompting and Supervised Fine-Tuning (SFT) </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td>
+                        <div class="readings">
+                            <div class="reading-item">• Schulhoff, Sander, Michael Ilie, Nishant Balepur, Konstantine Kahadze, Amanda Liu, Chenglei Si, Yinheng Li et al. <a href="https://arxiv.org/pdf/2406.06608?">"The prompt report: a systematic survey of prompt engineering techniques."</a> arXiv:2406.06608.</div>
+
+                        </div>
+                    </td>
+                </tr>
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">5</div>
+                    </td>
+                    <td class="date">Oct 1 (W)</td>
+                    <td class="theme-no-class"></td>
+                    <td>
+                        <div class="topic-null no-class">💃🏻 National Holiday Day - No Class </div>
+                    </td>
+                </tr>
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">6</div>
+                    </td>
+                    <td class="date">Oct 6 (M)</td>
+                    <td class="theme-no-class"></td>
+                    <td>
+                        <div class="topic-null no-class">💃🏻 National Holiday Day - No Class </div>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">6</div>
+                    </td>
+                    <td class="date">Oct 8 (W)</td>
+                    <td class="theme-methods">Methods</td>
+                    <td>
+                        <div class="topic"><b>Paper Presentation</b>: Data is Gold </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">7</div>
+                    </td>
+                    <td class="date">Oct 13 (M)</td>
+                    <td class="theme-methods">Methods</td>
+                    <td>
+                        <div class="topic"><b>Post-Training for Alignment</b>: RLHF and similar Approaches </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td>
+                        <div class="reading-item">• Ouyang, Long, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong Zhang et al. <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/b1efde53be364a73914f58805a001731-Paper-Conference.pdf">"Training language models to follow instructions with human feedback."</a> NeurIPS 2022. </div>
+
+                        <div class="reading-item">• Rafailov, Rafael, Archit Sharma, Eric Mitchell, Christopher D. Manning, Stefano Ermon, and Chelsea Finn. <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/a85b405ed65c6477a4fe8302b5e06ce7-Paper-Conference.pdf">"Direct preference optimization: Your language model is secretly a reward model."</a> NeurIPS 2024. </div>
+                    </td>
+                </tr>
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">7</div>
+                    </td>
+                    <td class="date">Oct 15 (W)</td>
+                    <td class="theme-methods">Methods</td>
+                    <td>
+                        <div class="topic"><b>Post-Training for Alignment</b>: Interactive Alignment and LLM Adaptation </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td>
+                        <div class="reading-item">• Petridis, Savvas, Benjamin D. Wedin, James Wexler, Mahima Pushkarna, Aaron Donsbach, Nitesh Goyal, Carrie J. Cai, and Michael Terry. <a href="https://dl.acm.org/doi/pdf/10.1145/3640543.3645144">"Constitutionmaker: Interactively critiquing large language models by converting feedback into principles."</a> IUI 2024. </div> 
+
+                        <div class="reading-item">• Terry, Michael, Chinmay Kulkarni, Martin Wattenberg, Lucas Dixon, and Meredith Ringel Morris. <a href="https://arxiv.org/pdf/2311.00710">"Interactive AI alignment: Specification, process, and evaluation alignment."</a> arXiv:2311.00710. </div>
+                    </td>
+                </tr>
+
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">8</div>
+                    </td>
+                    <td class="date">Oct 20 (M)</td>
+                    <td class="theme-methods">Methods</td>
+                    <td>
+                        <div class="topic"><b>Paper Presentation</b>: Post-Training for Alignment </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">8</div>
+                    </td>
+                    <td class="date">Oct 22 (W)</td>
+                    <td class="theme-methods">Methods</td>
+                    <td>
+                        <div class="topic"><b>Evaluation and Ecosystem</b>: Automatic and Human-in-the-loop Evaluation Approaches </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+
+                    <td>
+                        <div class="reading-item">• Felkner, Virginia K., Ho-Chun Herbert Chang, Eugene Jang, and Jonathan May. <a href="https://arxiv.org/pdf/2306.15087">"Winoqueer: A community-in-the-loop benchmark for anti-lgbtq+ bias in large language models."</a> ACL 2023. </div>
+
+                        <div class="reading-item">• Sun, Zhiqing, Yikang Shen, Qinhong Zhou, Hongxin Zhang, Zhenfang Chen, David Cox, Yiming Yang, and Chuang Gan. <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/0764db1151b936aca59249e2c1386101-Paper-Conference.pdf">"Principle-driven self-alignment of language models from scratch with minimal human supervision."</a> NeurIPS 2024. </div>
+                        
+                        <div class="reading-item">• Lee, Noah, Na Min An, and James Thorne. <a href="https://arxiv.org/pdf/2305.13788">"Can large language models capture dissenting human voices?."</a> EMNLP 2023.  </div>
+                        
+                        <div class="reading-item">• Zhou, Xuhui, Hao Zhu, Leena Mathur, Ruohong Zhang, Haofei Yu, Zhengyang Qi, Louis-Philippe Morency et al. <a href="https://arxiv.org/pdf/2310.11667">"Sotopia: Interactive evaluation for social intelligence in language agents."</a> ICLR 2024. </div> 
+
+                    </td>
+
+                </tr>
+
+
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">9</div>
+                    </td>
+                    <td class="date">Oct 27 (M)</td>
+                    <td class="theme-methods">Methods</td>
+                    <td>
+                        <div class="topic"><b>Evaluation and Ecosystem</b>: Platforms to empower human-AI alignment  </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                        <div class="rounded-tag">🎯 Assignment 1 Due</div>
+                    </td>
+                    <td>
+                        <div class="reading-item">• Dubois, Yann, Chen Xuechen Li, Rohan Taori, Tianyi Zhang, Ishaan Gulrajani, Jimmy Ba, Carlos Guestrin, Percy S. Liang, and Tatsunori B. Hashimoto. <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/5fc47800ee5b30b8777fdd30abcaaf3b-Paper-Conference.pdf">"Alpacafarm: A simulation framework for methods that learn from human feedback."</a> NeurIPS 2023. </div>
+
+                        <div class="reading-item">• Yuan, Yifu, Jianye Hao, Yi Ma, Zibin Dong, Hebin Liang, Jinyi Liu, Zhixin Feng, Kai Zhao, and Yan Zheng. <a href="https://arxiv.org/pdf/2402.02423">"Uni-rlhf: Universal platform and benchmark suite for reinforcement learning with diverse human feedback."</a> ICLR 2024. </div>
+                        
+                    </td>
+                </tr>
+
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">9</div>
+                    </td>
+                    <td class="date">Oct 29 (W)</td>
+                    <td class="theme-methods">Methods</td>
+                    <td>
+                        <div class="topic"><b>Paper Presentation</b>: Evaluation and Ecosystem </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td>
+                    </td>
+
+                </tr>
+
+
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">10</div>
+                    </td>
+                    <td class="date">Nov 3 (M)</td>
+                    <td class="theme-exam"></td>
+                    <td>
+                        <div class="topic" style="color: var(--brand-color-hover); font-weight: 700;"><div class="rounded-tag">🎓 Midway Project Showcase</div></div>
+                    </td>
+                </tr>
+
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">10</div>
+                    </td>
+                    <td class="date">Nov 5 (W)</td>
+                    <td class="theme-practice">Practice</td>
+                    <td>
+                        <div class="topic"><b>Human-AI Interaction</b>: Design and Development </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                        <div class="rounded-tag">🎯 Assignment 2 Released <br> (Human-LLM Interactive Alignment System) </div>
+                    </td>
+                    <td>
+
+                        <div class="reading-item">• Lee, Mina, Katy Ilonka Gero, John Joon Young Chung, Simon Buckingham Shum, Vipul Raheja, Hua Shen, Subhashini Venugopalan et al. <a href="https://dl.acm.org/doi/pdf/10.1145/3613904.3642697">"A design space for intelligent and interactive writing assistants."</a> CHI 2024. </div> 
+
+                        <div class="reading-item">• Zagalsky, Alexey, Dov Te'eni, Inbal Yahav, David G. Schwartz, Gahl Silverman, Daniel Cohen, Yossi Mann, and Dafna Lewinsky. <a href="https://dl.acm.org/doi/pdf/10.1145/3479587?casa_token=9Y8gx0sz7wAAAAAA:Ho6zgNrKI2W9Cw0QTT-MhaeDwRDM0uy5twlfkiu5H1JrdZO9rSAaJ43Ibmj2o0QTTvZjZpx0t01yCA">"The design of reciprocal learning between human and artificial intelligence."</a> CSCW 2021. </div> 
+                        
+                        <div class="reading-item">• Park, Joon Sung, Joseph O'Brien, Carrie Jun Cai, Meredith Ringel Morris, Percy Liang, and Michael S. Bernstein. <a href="https://dl.acm.org/doi/pdf/10.1145/3586183.3606763">"Generative agents: Interactive simulacra of human behavior."</a> IUI 2023. </div> 
+                        
+                        <div class="reading-item">• Friedman, Batya, David G. Hendry, and Alan Borning. <a href="https://www.nowpublishers.com/article/Details/HCI-015">"A survey of value sensitive design methods."</a> Foundations and Trends in Human–Computer Interaction, 2017. </div>    
+                        
+                    </td>
+                </tr>
+
+
+            
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">11</div>
+                    </td>
+                    <td class="date">Nov 10 (M)</td>
+                    <td class="theme-practice">Practice</td>
+                    <td>
+                        <div class="topic"><b>Human-AI Interaction</b>: Evaluation and Intervention </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td>
+                        <div class="reading-item">• Shen, Hua, and Tongshuang Wu. <a href="https://arxiv.org/pdf/2303.06333">"Parachute: Evaluating interactive human-lm co-writing systems."</a> CHI 2023 In2Writing. </div> 
+                        
+                        <div class="reading-item">• Birhane, Abeba, William Isaac, Vinodkumar Prabhakaran, Mark Diaz, Madeleine Clare Elish, Iason Gabriel, and Shakir Mohamed. <a href="https://dl.acm.org/doi/pdf/10.1145/3551624.3555290">"Power to the people? Opportunities and challenges for participatory AI."</a> EAAMO 2022. </div> 
+
+                        <div class="reading-item">• Wu, Sherry, Hua Shen, Daniel S. Weld, Jeffrey Heer, and Marco Tulio Ribeiro. <a href="https://arxiv.org/abs/2302.07346">"Scattershot: Interactive in-context example curation for text transformation."</a> IUI 2023. </div>
+                        
+                    </td>
+                </tr>
+
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">11</div>
+                    </td>
+                    <td class="date">Nov 12 (W)</td>
+                    <td class="theme-practice">Practice</td>
+                    <td>
+                        <div class="topic"><b>Human-AI Interaction</b>: Empirical Applications and Use Cases </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td>
+                        <div class="reading-item">• Ma, Qianou, Hua Shen, Kenneth Koedinger, and Sherry Tongshuang Wu. <a href="https://arxiv.org/pdf/2310.05292">"How to teach programming in the ai era? using llms as a teachable agent for debugging."</a> AIED 2024. </div>
+
+                        <div class="reading-item">• Yang, Diyi, Caleb Ziems, William Held, Omar Shaikh, Michael S. Bernstein, and John Mitchell. <a href="https://arxiv.org/pdf/2404.04204">"Social skill training with large language models."</a> arXiv:2404.04204. </div>
+                        
+                    </td>
+                </tr>    
+
+
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">12</div>
+                    </td>
+                    <td class="date">Nov 17 (M)</td>
+                    <td class="theme-practice">Practice</td>
+                    <td>
+                        <div class="topic"><b>Paper Presentation</b>: Human-AI Interaction </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">12</div>
+                    </td>
+                    <td class="date">Nov 19 (W)</td>
+                    <td class="theme-practice">Practice</td>
+                    <td>
+                        <div class="topic"><b>LLM Interpretability</b>: Mechanistic Interpretability Approaches </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td>
+                        <div class="reading-item">• Bereska, Leonard, and Efstratios Gavves. <a href="https://arxiv.org/pdf/2404.14082">"Mechanistic interpretability for AI safety--a review."</a> arXiv preprint arXiv:2404.14082 (2024). TMLR 2024. </div> 
+
+                        <div class="reading-item">• Sharkey, Lee, Bilal Chughtai, Joshua Batson, Jack Lindsey, Jeff Wu, Lucius Bushnaq, Nicholas Goldowsky-Dill et al. <a href="https://arxiv.org/pdf/2501.16496">"Open problems in mechanistic interpretability."</a> arXiv:2501.16496. </div> 
+                        
+                        <div class="reading-item">• Cunningham, Hoagy, Aidan Ewart, Logan Riggs, Robert Huben, and Lee Sharkey. <a href="https://arxiv.org/pdf/2309.08600">"Sparse autoencoders find highly interpretable features in language models."</a> ICLR 2024. </div> 
+                        
+                    </td>
+                </tr>
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">13</div>
+                    </td>
+                    <td class="date">Nov 24 (M)</td>
+                    <td class="theme-practice">Practice</td>
+                    <td>
+                        <div class="topic"><b>LLM Interpretability</b>: Human Evaluation and Interactive Explanation </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td>
+                        <div class="reading-item">• Shen, Hua, Chieh-Yang Huang, Tongshuang Wu, and Ting-Hao Kenneth Huang. <a href="https://arxiv.org/pdf/2305.09770">"ConvXAI: Delivering heterogeneous AI explanations via conversations to support human-AI scientific writing."</a>  CSCW 2023 Demo. </div>
+
+                        <div class="reading-item">• Gebreegziabher, Simret Araya, Zheng Zhang, Xiaohang Tang, Yihao Meng, Elena L. Glassman, and Toby Jia-Jun Li. <a href="https://dl.acm.org/doi/pdf/10.1145/3544548.3581352">"Patat: Human-ai collaborative qualitative coding with explainable interactive rule synthesis."</a> CHI 2023. </div>
+                        
+                    </td>
+                </tr>
+
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">13</div>
+                    </td>
+                    <td class="date">Nov 26 (W)</td>
+                    <td class="theme-no-class"></td>
+                    <td>
+                        <div class="topic-null no-class">🦃 Thanksgiving Holiday - No Class</div>
+                    </td>
+                </tr>
+
+
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">14</div>
+                    </td>
+                    <td class="date">Dec 1 (M)</td>
+                    <td class="theme-no-class"></td>
+                    <td>
+                        <div class="topic no-class">🦃 Thanksgiving Holiday - No Class</div>
+                    </td>
+                </tr>
+
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">14</div>
+                    </td>
+                    <td class="date">Dec 3 (W)</td>
+                    <td class="theme-practice">Practice</td>
+                    <td>
+                        <div class="topic"><b>Paper Presentation</b>: LLM Interpretability </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                        <div class="rounded-tag">🎯 Assignment 2 Due</div>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">15</div>
+                    </td>
+                    <td class="date">Dec 8 (M)</td>
+                    <td class="theme-practice">Practice</td>
+                    <td>
+                        <div class="topic"><b>Risks, Trust and Safety</b>: Taxonomies and Benchmarks </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td>
+                        <div class="reading-item">• Bengio, Yoshua, Geoffrey Hinton, Andrew Yao, Dawn Song, Pieter Abbeel, Trevor Darrell, Yuval Noah Harari et al. <a href="https://www.science.org/doi/full/10.1126/science.adn0117?casa_token=dZdxoXqNfWsAAAAA:imYS8uwblmMk7IMpsMMadjGQcaPbDvU2JlDSlkWK0Y0wAaeqpudCUFzuEymvX3TV0aCwkXul0xrXqw4">"Managing extreme AI risks amid rapid progress."</a> Science 2024. </div>
+
+                    </td>
+                </tr>
+
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">15</div>
+                    </td>
+                    <td class="date">Dec 10 (W)</td>
+                    <td class="theme-practice">Practice</td>
+                    <td>
+                        <div class="topic"><b>Risks, Trust and Safety</b>: Human-in-the-loop Auditing and Mitigation </div>
+                        <!-- <a href="" class="slides-link"><i class="fa-solid fa-display"></i> slides</a> -->
+                    </td>
+                    <td>
+                        <div class="reading-item">• Prabhudesai, Snehal, Ananya Prashant Kasi, Anmol Mansingh, Anindya Das Antar, Hua Shen, and Nikola Banovic. <a href="https://dl.acm.org/doi/pdf/10.1145/3706598.3713714">"'Here the GPT made a choice, and every choice can be biased': How Students Critically Engage with LLMs through End-User Auditing Activity."</a> CHI 2025. </div> 
+                        
+                    </td>
+                </tr>
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">16</div>
+                    </td>
+                    <td class="date">Dec 15 (M)</td>
+                    <td class="theme-exam"></td>
+                    <td>
+                        <div class="topic" style="color: var(--brand-color-hover); font-weight: 700;"><div class="rounded-tag">🎓 Final Project Presentation</div></div>
+                    </td>
+                </tr>
+
+
+                <tr data-category="lecture">
+                    <td>
+                        <div class="week-number">16</div>
+                    </td>
+                    <td class="date">Dec 17 (W)</td>
+                    <td class="theme-exam"></td>
+                    <td>
+                        <div class="topic" style="color: var(--brand-color-hover); font-weight: 700;"><div class="rounded-tag">🎓 Final Project Presentation</div></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+        <div class="course-info">
+            <div class="subsection-title"> <span>Overview</span> </div>
+
+
+            <div class="subsubsection-title"> <span>Office Hour</span> </div>
+            <div class="readings">
+                <b>Hua Shen</b>: 11:00 AM - 12:00 PM, Tue/Wed; 
+                <b>Office</b>: S749; 
+                <b>Zoom</b>: <a href="https://nyu.zoom.us/my/hua.shen">https://nyu.zoom.us/my/hua.shen (Passcode: enQb9h)</a>
+            </div>
+
+
+            <div class="subsubsection-title"> <span>Prerequisite</span> </div>
+            <div class="readings">
+                Students are expected to (1) be proficient in Python and relevant programming libraries  (e.g. HuggingFace, OpenAI API) for completing assignments, and (2) know basic Machine Learning and Human-computer Interaction (optional) concepts to comprehend research papers.
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+    </main>
+
+    <!-- ALL ICONS LINK HERE: https://github.com/goodinc/ctzn-ui/tree/gh-pages/assets/images/icons -->
+
+<footer class="site-footer">
+
+    <div class="wrapper">
+        <ul class="footer-col footer-col-1">
+            <span class="legal"><a class="" href="/">Stay Hungry, Stay Foolish</a></span>
+            | 
+            <span class="legal"> © <a class="" href="/">Hua Shen</a> (Last Updated: 2025-08)</span>
+    </div>
+    
+</footer>
+
+  </body>
+
+</html>
