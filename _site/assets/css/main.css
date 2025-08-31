@@ -15,7 +15,8 @@ body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure { m
     --link-color: #440079;
     --brand-color-hover: #FB9E09;
     --font-size: 12pt;
-    --font-size-section-title: 20pt;
+    --font-size-section-title: 16pt;
+    --font-size-title: 26pt;
     --line-height: 1.5;
     --nav-font-size: 16pt;
     --font-family: "Palatino", sans-serif;
@@ -402,7 +403,7 @@ form input[type=submit]:active { background: #420078; }
 
 
 
-.post-title { margin-top: 0; color: var(--brand-color); text-align: center; font-size: 38px;}
+.post-title { margin-top: 0; color: var(--brand-color); text-align: center; font-size: var(--font-size-title);}
 
 .post-summary { margin-top: 0; }
 
