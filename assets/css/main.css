@@ -16,7 +16,7 @@ body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure { m
     --brand-color-hover: #FB9E09;
     --font-size: 12pt;
     --font-size-section-title: 20pt;
-    --line-height: 1.8;
+    --line-height: 1.5;
     --nav-font-size: 16pt;
     --font-family: "Palatino", sans-serif;
 }
