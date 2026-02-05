@@ -9,6 +9,15 @@
 /** Reset some basic elements */
 body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure { margin: 0; padding: 0; }
 
+@font-face {
+    font-family: "MyKai";
+    src: url("/assets/opensans/HuaWenXingKai.ttf") format("truetype");
+}
+
+.kaiti {
+    font-family: "MyKai", "KaiTi", "STKaiti", "Kaiti SC", "楷体", serif;
+    font-size: 38px;
+}
 
 :root {
     --brand-color: #440079;
@@ -831,7 +840,6 @@ form input[type=submit]:active { background: #420078; }
     padding-left: 10px;
     width: -webkit-calc(35% - (30px));
 }
-
 
 
 .project-col-2 {
