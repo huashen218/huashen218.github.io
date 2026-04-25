@@ -54,87 +54,223 @@
 
     <main class="page-content" aria-label="Content">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" 
+<link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
     integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" 
-    />
-
-
+    crossorigin="anonymous" referrerpolicy="no-referrer"
+/>
 
 <style>
-    
-    /* Box styles */
-    .myBox {
-    border: solid #E6E6E6;
-    /* border-style: dotted; */
-    /* border-color: #666666; */
-    border-width: 0.5px;
-    padding: 5px;
-    /* font: 24px/36px sans-serif; */
-    width: 100%;
-    height: 800px;
-    overflow: scroll;
+    /* ===== Global ===== */
+    .pagewrapper div {
+        line-height: 1.5;
     }
-    
-    /* Scrollbar styles */
-    ::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
+
+    /* ===== Scrollbar ===== */
+    ::-webkit-scrollbar { width: 12px; height: 12px; }
+    ::-webkit-scrollbar-thumb { background: var(--brand-color); border-radius: 5px; }
+
+    /* ===== Section Titles ===== */
+    .section-title {
+        margin-top: 40px;
+        margin-bottom: 16px;
     }
-    
-    ::-webkit-scrollbar-thumb {
-    background: var(--brand-color);  
-    border-radius: 5px;
+    .section-title span {
+        border-left: 4px solid var(--brand-color, #7F77DD);
+        padding-left: 12px;
     }
+
+    /* ===== Recruitment Box ===== */
     .highlight-box {
-            background-color: #E9DFEF; /* Light lavender background */
-            /* border: 2px solid #800080; */
-            padding: 10px; /* Padding inside the box */
-            border-radius: 5px; /* Rounded corners */
-            margin: 10px 0; /* Margin above and below the box */
-            /* font-weight: bold; */
-            margin: 20px 3px;
-        }
-        .pagewrapper div {
-            line-height: 1.5; 
-        }
+        background-color: #E9DFEF;
+        padding: 16px 20px;
+        border-radius: 8px;
+        margin: 24px 0;
+        line-height: 1.8;
+    }
+
+    /* ===== Research Directions ===== */
+    .research-directions {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin: 20px 0;
+    }
+    .direction-card {
+        border-left: 4px solid #ccc;
+        padding: 16px 20px;
+        border-radius: 0 8px 8px 0;
+        background: #fafafa;
+        line-height: 2;
+    }
+    .direction-card.minimize {
+        border-left-color: #E24B4A;
+        background: #FEF6F6;
+    }
+    .direction-card.maximize {
+        border-left-color: #378ADD;
+        background: #F4F9FE;
+    }
+    .direction-card.dynamics {
+        border-left-color: #7F77DD;
+        background: #F8F7FE;
+    }
+    .direction-card-title {
+        font-size: 1.05em;
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: #333;
+    }
+    .direction-card.minimize .direction-card-title { color: #A32D2D; }
+    .direction-card.maximize .direction-card-title { color: #185FA5; }
+    .direction-card.dynamics .direction-card-title { color: #534AB7; }
+
+    .publist-direction {
+        margin: 4px 0;
+        font-size: 0.95em;
+    }
+
+    /* ===== News Timeline ===== */
+    .news-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .news-item {
+        display: flex;
+        gap: 12px;
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+        align-items: baseline;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-date {
+        display: inline-block;
+        background: #f0eef8;
+        color: #534AB7;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 2px 10px;
+        border-radius: 12px;
+        white-space: nowrap;
+        min-width: 70px;
+        text-align: center;
+        flex-shrink: 0;
+    }
+    .news-content {
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+    .award-highlight {
+        color: #D84C19;
+        font-weight: bold;
+    }
+
+    /* ===== Collapsible Sections ===== */
+    .collapsible-items .hidden-item {
+        display: none;
+    }
+    .collapsible-items.expanded .hidden-item {
+        display: flex;
+    }
+    .collapsible-items.expanded .hidden-item-block {
+        display: list-item;
+    }
+    .toggle-btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 6px 126px;
+        font-size: 13px;
+        color: #534AB7;
+        background: #C5BFDF;
+        border: none;
+        border-radius: 16px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+    .toggle-btn:hover {
+        background: #e4e0f4;
+    }
+
+    /* ===== Awards List ===== */
+    .awards-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .award-item {
+        padding: 6px 0;
+        border-bottom: 1px solid #f5f5f5;
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+    .award-item:last-child { border-bottom: none; }
+
+    /* ===== Services List ===== */
+    .services-group-title {
+        font-size: 0.95em;
+        font-weight: 700;
+        color: #555;
+        margin: 16px 0 6px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #eee;
+    }
+    .services-group-title:first-child { margin-top: 0; }
+    .service-item {
+        padding: 4px 0;
+        font-size: 0.93em;
+        line-height: 1.6;
+    }
+
+    /* ===== Social Links Bar ===== */
+    .social-bar {
+        text-align: center;
+        padding: 8px 0;
+    }
+    .cl-item {
+        margin: 0 8px;
+    }
+
+    /* ===== Bio Quote ===== */
+    .bio-quote {
+        text-align: center;
+        margin: 16px 0;
+        padding: 12px 24px;
+        background: #f9f8fc;
+        border-radius: 8px;
+        border: 1px solid #e8e6f0;
+    }
 </style>
 
 
-
-
 <div class="wrapper">
-    
+
     <div class="top">
         <div class="about-col-1">
-            <img 
+            <img
             class="user-picture"
             src="/assets/images/profile.png"
             alt="Hua Shen" >
         </div>
         <div class="about-col-2">
+            <!-- <h2><a class="post-name" style="font-family: Times New Roman">Hua Shen (<span class="kaiti" style="font-size: 100px;">申华</span>)</a></h2> -->
             <h2><a class="post-name style="font-family: Times New Roman">Hua Shen (<span class="kaiti style="font-size: 100px;">申华</span>)</a></h2>
             <div>Tenure-Track Assistant Professor</div>
             <div>Computer Science, NYU Shanghai</div>
             <div>Computer Science Department, New York University</div>
-            <!-- <div>Courant Institute Computer Science, NYU (Affiliation)</div> -->
-
             <div>
                 <a href="mailto:" title="Email">
   <span class="icon icon--email"><svg viewBox="0 0 24 24" width="16px" height="16px"><path fill="#828282" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
 </span
   ><span class="username"> huashen@nyu.edu</span></a
 >
- 
+
             </div>
         </div>
     </div>
 
 
-
-    <div class="homemain" style="text-align:center;">
-
+    <div class="homemain social-bar">
         <br>
         <span class="cl-item">
             <a
@@ -200,33 +336,93 @@
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </span>
     </div>
-    
+
 
     <div class="homemain">
-        
+
     <br>
 
     <div class="short-bio">
-
-
-        I am a tenure-track assistant professor of <a class="post-link" href="https://cs.shanghai.nyu.edu/faculty" target="_blank">Computer Science at NYU Shanghai</a>, jointly affiliated with the <a class="post-link" href="https://cs.nyu.edu/home/index.html" target="_blank">Computer Science Department</a> at <a class="post-link" href="https://www.nyu.edu/" target="_blank">New York University</a>. 
-        I currently serve on the NYU Computer Science 2026 Ph.D. Admissions Committee and the NYU Shanghai's university-level AI & Innovation Committee.
-        I have been honored to receive four Shanghai talent awards, including <a class="post-link" href="" target="_blank">Shanghai Pearl Elite Talent</a>, <a class="post-link" href="" target="_blank"> Pujiang Talent</a>, <a class="post-link" href="" target="_blank"> Magnolia Talent</a>, and <a class="post-link" href="" target="_blank"> Oriental Talent</a> Awards.
+        <!-- I am a tenure-track assistant professor of <a class="post-link" href="https://cs.shanghai.nyu.edu/faculty" target="_blank">Computer Science at NYU Shanghai</a>, jointly affiliated with the <a class="post-link" href="https://cs.nyu.edu/home/index.html" target="_blank">Computer Science Department</a> at <a class="post-link" href="https://www.nyu.edu/" target="_blank">New York University</a>. 
+        I am serving on the AI & Innovation Advisory Committee in NYU Shanghai, leading the Interdisciplinary AI Research subcommittee.
+        I have been honored to receive four Shanghai talent awards, including <a class="post-link" href="" target="_blank">Shanghai Pearl Elite Talent</a>, <a class="post-link" href="" target="_blank"> Pujiang Talent</a>, <a class="post-link" href="" target="_blank"> Magnolia Talent</a>, and <a class="post-link" href="" target="_blank"> Oriental Talent</a> Awards. -->
+        
+        I am a tenure-track assistant professor of <a class="post-link" href="https://cs.shanghai.nyu.edu/faculty" target="_blank">Computer Science at NYU Shanghai</a>, jointly affiliated with the <a class="post-link" href="https://cs.nyu.edu/home/index.html" target="_blank">Computer Science Department at New York University</a>. 
+        I serve on NYU Shanghai's AI & Innovation Advisory Committee, where I lead the Interdisciplinary AI Research subcommittee. 
+        I have been honored to receive four <a class="post-link" href="" target="_blank">Shanghai talent awards</a>: Pearl Elite, Pujiang, Magnolia, and Oriental.
+        
+        
         <br>
         <br>
-        I broadly pursue interdisciplinary research connecting <span style="color:#1271CA"><b>AI</b></span> (e.g., <b>Natural Language Processing, Speech Processing, and Machine Learning</b>) and <span style="color:#DE4A4D"><b>Humans</b></span> (e.g, <b>Human-Computer Interaction, Computational Social Science, Psychology</b>). 
+
+        I broadly pursue interdisciplinary research connecting <span style="color:#1271CA"><b>AI</b></span> (e.g., <b>Natural Language Processing, Speech Processing, and Machine Learning</b>) and <span style="color:#DE4A4D"><b>Humans</b></span> (e.g, <b>Human-Computer Interaction, Computational Social Science, Psychology</b>).
         Specifically, I initiated the research on <b>Bidirectional Human-AI Alignment</b> (<a class="post-link" href="https://hai-alignment-course.github.io/tutorial/" target="_blank">NeurIPS 2025 Tutorial</a> | <a class="post-link" href="https://bialign-workshop.github.io/#/" target="_blank">CHI 2026 Workshop</a> | <a class="post-link" href="https://arxiv.org/abs/2406.09264" target="_blank">NeurIPS 2025 Position Paper</a> | <a class="post-link" href="https://bialign-workshop.github.io/#/" target="_blank">ICLR & CHI 2025 Workshop</a> | <a class="post-link" href="https://hua-shen.org/src/course_bialign.html" target="_blank">NYU Shanghai Course</a>).
         My research aims to:
-        <br>
-        <br>
-        <h4 style="text-align: center; margin: 0px;"><i style="text-align: center"><b>"Maximizing Capabilities AND Minimizing Risks in Human-AI Co-Evolution"</b></i> </h3>
-        <br>
-        that enables humans to interactively explain, audit, and collaborate with agentic AI (Align <span style="color:#DE4A4D"><b>Humans</b></span> with <span style="color:#1271CA"><b>AI</b></span>), and integrates human feedback and values to improve agentic AI (Align <span style="color:#1271CA"><b>AI</b></span> with <span style="color:#DE4A4D"><b>Humans</b></span>), achieving a <b>complete loop</b> of <b>Bidirectional <span style="color:#DE4A4D"><b>Humans</b></span><span style="color:#F9AB10;font-weight: 900;">&#8596</span><span style="color:#1271CA"><b>AI</b></span> Alignment</b>.
-        
-        
-        <div class="highlight-box" style="line-height: 2;">
-            I will be recruiting <b>PhD</b> students through <a class="post-link" href="https://cs.nyu.edu/dynamic/phd/admissions/" target="_blank"><b>NYU Courant Computer Science Department</b></a> starting in 2026 Fall. I'm also recruiting <b>Undergraduate</b> and <b>Master</b> students in 2025. See our <a class="post-link" href="https://hua-shen.org/src/lab.html" target="_blank"><b>BiAlign Lab page</b></a>.
+        <br><br>
+
+        <div class="bio-quote">
+            <h4 style="margin: 0;"><i><b>"Maximizing Capabilities AND Minimizing Risks in Human-AI Co-Evolution"</b></i></h4>
         </div>
+
+        that enables humans to interactively explain, audit, and collaborate with agentic AI (Align <span style="color:#DE4A4D"><b>Humans</b></span> with <span style="color:#1271CA"><b>AI</b></span>), and integrates human feedback and values to improve agentic AI (Align <span style="color:#1271CA"><b>AI</b></span> with <span style="color:#DE4A4D"><b>Humans</b></span>), achieving a <b>complete loop</b> of <b>Bidirectional <span style="color:#DE4A4D">Humans</span><span style="color:#F9AB10;font-weight: 900;">&#8596;</span><span style="color:#1271CA">AI</span> Alignment</b>.
+
+        Concrete research directions and representative papers include:
+        <br>
+
+        <!-- ===== Research Direction Cards ===== -->
+        <div class="research-directions">
+
+            <div class="direction-card minimize">
+                <div class="direction-card-title">1. Minimizing Risks</div>
+                <li class="publist-direction">
+                    <b>Value Alignment:</b>
+                    <a class="post-link" href="https://arxiv.org/pdf/2501.15463" target="_blank"><i>Mind the Value-Action Gap</i> <span style="color: #333">(EMNLP 2025</span> <span class="award-highlight"><i class="fa-solid fa-trophy" style="font-size: 10pt; margin: 0 3pt"></i>Outstanding Paper</span><span style="color: #333">)</span></a>;
+                    <a class="post-link" href="https://arxiv.org/pdf/2602.12134" target="_blank"><i>Value Alignment Tax</i> <span style="color: #333">(ACL 2026 Findings)</span></a>;
+                    <a class="post-link" href="https://arxiv.org/pdf/2511.02109" target="_blank"><i>Deep Value Benchmark</i> <span style="color: #333">(NeurIPS 2025)</span></a>;
+                    <a class="post-link" href="https://aclanthology.org/2025.winlp-main.15.pdf" target="_blank"><i>ValueCompass</i> <span style="color: #333">(EMNLP 2025 WiNLP)</span></a>;
+                    <a class="post-link" href="https://arxiv.org/pdf/2602.08567" target="_blank"><i>ValueFlow</i> <span style="color: #333">(Arxiv 2026)</span></a>
+                </li>
+                <li class="publist-direction">
+                    <b>Agentic AI Safety & Risks:</b>
+                    <a class="post-link" href="https://arxiv.org/pdf/2509.10830" target="_blank"><i>LLM Dark Patterns</i> <span style="color: #333">(CHI 2026</span> <span class="award-highlight"><i class="fa-solid fa-trophy" style="font-size: 10pt; margin: 0 3pt"></i>Best Paper Honorable Mention</span><span style="color: #333">)</span></a>;
+                    <a class="post-link" href="https://arxiv.org/pdf/2510.11035" target="_blank"><i>SusBench</i> <span style="color: #333">(IUI 2026)</span></a>
+                </li>
+            </div>
+
+            <div class="direction-card maximize">
+                <div class="direction-card-title">2. Maximizing Capabilities</div>
+                <li class="publist-direction">
+                    <b>Epistemic & Cognitive Alignment:</b>
+                    <a class="post-link" href="https://arxiv.org/pdf/2305.09770" target="_blank"><i>ConvXAI</i> <span style="color: #333">(CSCW 2023</span> <span class="award-highlight"><i class="fa-solid fa-trophy" style="font-size: 10pt; margin: 0 3pt"></i>Best Demo</span><span style="color: #333">)</span></a>;
+                    <a class="post-link" href="https://arxiv.org/pdf/2504.01205" target="_blank"><i>Epistemic Alignment</i> <span style="color: #333">(COLM 2025)</span></a>;
+                    <a class="post-link" href="https://dl.acm.org/doi/pdf/10.1145/3706598.3713714" target="_blank"><i>PromptAuditor</i> <span style="color: #333">(CHI 2025)</span></a>
+                </li>
+                <li class="publist-direction">
+                    <b>Behavior & Representation Alignment:</b>
+                    <a class="post-link" href="https://arxiv.org/pdf/2310.05292" target="_blank"><i>HypoCompass</i> <span style="color: #333">(AIED 2024 / IJCAI 2025</span> <span class="award-highlight"><i class="fa-solid fa-trophy" style="font-size: 10pt; margin: 0 3pt"></i>Best Paper & Best Interactive Event</span><span style="color: #333">)</span></a>;
+                    <a class="post-link" href="https://arxiv.org/pdf/2601.11739" target="_blank"><i>Bridging Human Interpretation and Machine Representation</i> <span style="color: #333">(CHI 2026 BiAlign)</span></a>
+                </li>
+            </div>
+
+            <div class="direction-card dynamics">
+                <div class="direction-card-title">3. Dynamics & Co-evolution</div>
+                <li class="publist-direction">
+                    <b>Bidirectional Human-AI Alignment:</b>
+                    <a class="post-link" href="https://arxiv.org/pdf/2406.09264" target="_blank"><i>Bidirectional Human-AI Alignment</i> <span style="color: #333">(NeurIPS 2025 Position)</span></a>;
+                    <a class="post-link" href="https://nips.cc/virtual/2025/tutorial/109592" target="_blank"><i>Human-AI Alignment Tutorial</i> <span style="color: #333">(NeurIPS 2025</span> <span class="award-highlight"><i class="fa-solid fa-circle-play" style="font-size: 10pt; margin: 0 3pt"></i>Tutorial</span><span style="color: #333">)</span></a>;
+                    <a class="post-link" href="https://dl.acm.org/doi/pdf/10.1145/3772363.3778710" target="_blank"><i>Human-AI Interaction Alignment</i> <span style="color: #333">(CHI 2026)</span></a>;
+                    <a class="post-link" href="https://arxiv.org/pdf/2510.20039" target="_blank"><i>Bidirectional Opinion Dynamics</i> <span style="color: #333">(CHI 2026 BiAlign)</span></a>;
+                    <a class="post-link" href="https://openreview.net/pdf?id=HcTiacDN8N" target="_blank"><i>Bidirectional Alignment</i> <span style="color: #333">(ICLR 2025)</span></a>
+                </li>
+            </div>
+
+        </div>
+
+
+        <div class="highlight-box">
+            I am recruiting <b>PhD</b> students through <a class="post-link" href="https://cs.nyu.edu/dynamic/phd/admissions/" target="_blank"><b>NYU Courant Computer Science Department</b></a>. I'm also recruiting <b>Undergraduate</b> and <b>Master</b> students. See our <a class="post-link" href="https://hua-shen.org/src/lab.html" target="_blank"><b>BiAlign Lab page</b></a> and welcome to reach out!
+        </div>
+
 
         <!-- ============ About Me ============ -->
         <div class="section-title"> <span>About Me</span> </div>
@@ -234,202 +430,251 @@
         Deeply grateful for my mentors, collaborators, and students&#129505;!
 
 
+        <!-- ============ Recent Activities ============ -->
         <div class="section-title"> <span>Recent Activities</span> </div>
-        <span>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2026-03</strong></span> <span>Congrats to <a class="post-link" href="https://www.linkedin.com/in/yike-cassandra-shi" target="_blank">Yike</a> for her first CHI 2026 paper, <a class="post-link" href="https://arxiv.org/pdf/2509.10830" target="_blank">The Dark Patterns in LLMs</a>, received <strong><a class="post-link" href="https://bialign-workshop.github.io/" target="_blank"><span class="text-primary" style="color:#D84C19; font-weight:bold"><i class="fa-solid fa-trophy"></i>Best Paper Honorable Mention Award</a></strong>! Welcome to share your experiences with <a class="post-link" href="https://llm-dark-pattern.com/" target="_blank"><span class="text-primary" style="color:#D84C19; font-weight:bold"><b>LLM Dark Patterns in our Website</b></span></a>!</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2026-01</strong></span> <span>Received the prestigious <strong><a class="post-link" href="https://bialign-workshop.github.io/" target="_blank"><span class="text-primary" style="color:#D84C19; font-weight:bold"><i class="fa-solid fa-trophy"></i> Google Gemini Academic Program Award</a></strong></a> to support our BiAlign research with <a class="post-link" href="https://gemini.google.com/app" target="_blank"><b>Gemini Model</b></a>!!</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2026-01</strong></span> <span>Organizing our <strong><a class="post-link" href="https://bialign-workshop.github.io/" target="_blank">CHI 2026 BiAlign Workshop</a></strong> with our <a class="post-link" href="https://bialign-workshop.github.io/2026/organizers" target="_blank">amazing collaborators</a>!</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-12</strong></span> <span>Truly honored to receive four talent program awards from Shanghai in 2025: <strong><a class="post-link" href="" target="_blank">Shanghai <span class="text-primary" style="color:#D84C19; font-weight:bold">Pearl Elite Talent</span> Award</a></strong>, <strong><a class="post-link" href="" target="_blank"><span class="text-primary" style="color:#D84C19; font-weight:bold">Pujiang Talent</span> Award</a></strong>, <strong><a class="post-link" href="" target="_blank"> <span class="text-primary" style="color:#D84C19; font-weight:bold">Magnolia Talent</span> Award</a></strong>, and <strong><a class="post-link" href="" target="_blank"> <span class="text-primary" style="color:#D84C19; font-weight:bold">Oriental Talent</span> Award</a></strong>. Many thanks!</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-12</strong></span> <span>Gave an <a class="post-link" href="https://2025.ieeeasru.org/program/invited-speakers" target="_blank">invited talk</a> at <strong><a class="post-link" href="https://2025.ieeeasru.org/program/invited-speakers" target="_blank">ASRU 2025 @ Hawaii</a></strong> on human-centered alignment in Speech LLMs.</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-12</strong></span> <span>Attending <strong><a class="post-link" href="https://neurips.cc/" target="_blank">NeurIPS 2025 @ San Diego</a></strong> for one <span><strong><a class="post-link" href="https://nips.cc/virtual/2025/tutorial/109592" target="_blank">Human-AI Alignment Tutorial</a></strong>, and two papers: <span><strong><a class="post-link" href="https://arxiv.org/abs/2406.09264" target="_blank">Towards Bidirectional Human-AI Alignment</a></strong> and <strong><a class="post-link" href="../assets/files/neurips25_dvb.pdf" target="_blank">Deep Value Benchmark</a></strong>.</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-11</strong></span> <strong><a class="post-link" href="https://arxiv.org/pdf/2501.15463" target="_blank">Mind the Value-Action Gap</a></strong> has been awarded as the <span class="text-primary" style="color:#D84C19; font-weight:bold"><i class="fa-solid fa-trophy"></i> Outstanding Paper Award</span> at <strong><a class="post-link" href="https://2025.emnlp.org/" target="_blank">EMNLP 2025</a></strong> !
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-11</strong></span> <span>Attending <strong><a class="post-link" href="https://2025.emnlp.org/" target="_blank">EMNLP 2025 @ Suzhou</a></strong> to present two papers: <span><strong><a class="post-link" href="https://arxiv.org/pdf/2501.15463" target="_blank">Mind the Value-Action Gap</a></strong> and <strong><a class="post-link" href="https://arxiv.org/pdf/2409.09586" target="_blank">ValueCompass</a></strong>.</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-10</strong></span> <span>Attending <span><strong><a class="post-link" href="https://colmweb.org/" target="_blank">COLM 2025 @ Montreal</a></strong> to support our <strong><a class="post-link" href="https://arxiv.org/abs/2504.01205" target="_blank">Epistemic Alignment</a></strong> work.</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-09</strong></span> <span>Our <span><strong><a class="post-link" href="https://arxiv.org/abs/2406.09264" target="_blank">Bidirectional Human-AI Alignment</a></strong> paper is accepted by <strong><a class="post-link" href="https://neurips.cc/" target="_blank">NeurIPS 2025 Postion Track</a></strong> (<6% Acceptance Rate)!</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-10</strong></span> <span>Attending <span><strong>Human Flourishing with AI</strong> workshop @<strong><a class="post-link" href="https://www.media.mit.edu/" target="_blank">MIT Media Lab</a></strong>.</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-09</strong></span> <span>I'm co-chairing the <span><strong><a class="post-link" href="https://winlp-workshop.github.io/" target="_blank">WiNLP Workshop @ EMNLP 2025</a></strong> and attend EMNLP 2025 in person to organize!</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-09</strong></span> <span>Our <span><strong><a class="post-link" href="https://arxiv.org/pdf/2501.15463" target="_blank">Mind the Value-Action Gap</a></strong> paper is accepted by <strong><a class="post-link" href="https://2025.emnlp.org/" target="_blank">EMNLP 2025 Main</a></strong>!</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-09</strong></span> <span>Our <span><strong><a class="post-link" href="" target="_blank">Deep Value Benchmark</a></strong> paper is accepted by <strong><a class="post-link" href="https://neurips.cc/" target="_blank">NeurIPS 2025 Spotlight!</a></strong></span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-09</strong></span> <span>Our <span><strong><a class="post-link" href="https://arxiv.org/pdf/2409.09586" target="_blank">ValueCompass</a></strong> paper is accepted by <strong><a class="post-link" href="https://www.winlp.org/" target="_blank">EMNLP 2025 WiNLP Workshop</a></strong>!</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-09</strong></span> <span>Attended <b>AI Welfare Symposium</b> @<span><strong><a class="post-link" href="https://www.hku.hk/" target="_blank">University of Hong Kong</a></strong> to discuss amazing book written <strong><a class="post-link" href="https://shanghai.nyu.edu/content/computer-science" target="_blank">Google DeepMind</a></strong> scientists!</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-09</strong></span> <span>Teaching a new course: <span><strong><a class="post-link" href="https://hua-shen.org/src/course_bialign.html" target="_blank">Bidirectional Human-AI Alignment</a></strong> @<strong><a class="post-link" href="https://shanghai.nyu.edu/content/computer-science" target="_blank">NYU Shanghai</a></strong>.</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-09</strong></span> <span>Serve in <b>Research Development Committee</b> of Computer Science @<strong><a class="post-link" href="https://shanghai.nyu.edu/content/computer-science" target="_blank">NYU Shanghai</a></strong>.</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-09</strong></span> <span>Starting Assistant Professor of Computer Science @<strong><a class="post-link" href="https://shanghai.nyu.edu/content/computer-science" target="_blank">NYU Shanghai</a></strong>.</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-08</strong></span> <span><strong><a class="post-link" href="https://nips.cc/virtual/2025/tutorial/109592" target="_blank">Human-AI Alignment Tutorial</a></strong> accepted @<strong><a class="post-link" href="https://neurips.cc/" target="_blank">NeurIPS 2025</a></strong>.</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-08</strong></span> <span><strong><a class="post-link" href="https://arxiv.org/pdf/2501.15463" target="_blank">Mind the Value-Action Gap</a></strong> paper accepted @<strong><a class="post-link" href="https://2025.emnlp.org/" target="_blank">EMNLP 2025 Main</a></strong>.</span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-08</strong></span> Gave a talk on <b>Bidirectional Alignment & Value Alignment</b> @<span><strong><a class="post-link" href="https://rdi.berkeley.edu/events/agentic-ai-summit" target="_blank">UC Berkeley Agentic AI Summit</a></strong></span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-08</strong></span> <span><strong>Serving as Associate Chair</strong> @<strong><a class="post-link" href="https://chi2026.acm.org/" target="_blank">CHI 2026</a></strong></span>
-            </li>
-            <li class="publist-main-page">
-                <span class="main-news"><strong>2025-08</strong></span> <span><strong>Serving as a PC member</strong> @<strong><a class="post-link" href="https://aaai.org/conference/aaai/aaai-26/" target="_blank">AAAI 2026, AAAI AI Alignment Track</a></span>
-            </li>        
-        </span>
-        
+        <div class="collapsible-items" id="news-section">
+            <div class="news-item">
+                <span class="news-date">2026-03</span>
+                <span class="news-content">Congrats to <a class="post-link" href="https://www.linkedin.com/in/yike-cassandra-shi" target="_blank">Yike</a> for her first CHI 2026 paper, <a class="post-link" href="https://arxiv.org/pdf/2509.10830" target="_blank">The Dark Patterns in LLMs</a>, received <strong><span class="award-highlight"><i class="fa-solid fa-trophy"></i> Best Paper Honorable Mention Award</span></strong>! Welcome to share your experiences with <a class="post-link" href="https://llm-dark-pattern.com/" target="_blank"><span class="award-highlight"><b>LLM Dark Patterns in our Website</b></span></a>!</span>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2026-01</span>
+                <span class="news-content">Received the prestigious <strong><span class="award-highlight"><i class="fa-solid fa-trophy"></i> Google Gemini Academic Program Award</span></strong> to support our BiAlign research with <a class="post-link" href="https://gemini.google.com/app" target="_blank"><b>Gemini Model</b></a>!</span>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2026-01</span>
+                <span class="news-content">Organizing our <strong><a class="post-link" href="https://bialign-workshop.github.io/" target="_blank">CHI 2026 BiAlign Workshop</a></strong> with our <a class="post-link" href="https://bialign-workshop.github.io/2026/organizers" target="_blank">amazing collaborators</a>!</span>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2025-12</span>
+                <span class="news-content">Truly honored to receive four talent program awards from Shanghai in 2025: <strong><span class="award-highlight">Pearl Elite Talent</span></strong>, <strong><span class="award-highlight">Pujiang Talent</span></strong>, <strong><span class="award-highlight">Magnolia Talent</span></strong>, and <strong><span class="award-highlight">Oriental Talent</span></strong> Awards. Many thanks!</span>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2025-12</span>
+                <span class="news-content">Gave an <a class="post-link" href="https://2025.ieeeasru.org/program/invited-speakers" target="_blank">invited talk</a> at <strong><a class="post-link" href="https://2025.ieeeasru.org/program/invited-speakers" target="_blank">ASRU 2025 @ Hawaii</a></strong> on human-centered alignment in Speech LLMs.</span>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2025-12</span>
+                <span class="news-content">Attending <strong><a class="post-link" href="https://neurips.cc/" target="_blank">NeurIPS 2025 @ San Diego</a></strong> for one <strong><a class="post-link" href="https://nips.cc/virtual/2025/tutorial/109592" target="_blank">Human-AI Alignment Tutorial</a></strong>, and two papers: <strong><a class="post-link" href="https://arxiv.org/abs/2406.09264" target="_blank">Towards Bidirectional Human-AI Alignment</a></strong> and <strong><a class="post-link" href="../assets/files/neurips25_dvb.pdf" target="_blank">Deep Value Benchmark</a></strong>.</span>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2025-11</span>
+                <span class="news-content"><strong><a class="post-link" href="https://arxiv.org/pdf/2501.15463" target="_blank">Mind the Value-Action Gap</a></strong> has been awarded as the <span class="award-highlight"><i class="fa-solid fa-trophy"></i> Outstanding Paper Award</span> at <strong><a class="post-link" href="https://2025.emnlp.org/" target="_blank">EMNLP 2025</a></strong>!</span>
+            </div>
+            <div class="news-item">
+                <span class="news-date">2025-11</span>
+                <span class="news-content">Attending <strong><a class="post-link" href="https://2025.emnlp.org/" target="_blank">EMNLP 2025 @ Suzhou</a></strong> to present two papers: <strong><a class="post-link" href="https://arxiv.org/pdf/2501.15463" target="_blank">Mind the Value-Action Gap</a></strong> and <strong><a class="post-link" href="https://arxiv.org/pdf/2409.09586" target="_blank">ValueCompass</a></strong>.</span>
+            </div>
 
-        <div class="section-title"> <span>Selected Honors/Awards</span> </div>
-        <span>
-            <li class="publist-main-page">
-                <span><strong>Best Paper Honorable Mention Award</strong>, (<a class="post-link" href="https://arxiv.org/pdf/2509.10830" target="_blank">LLM Dark Pattern</a> Paper), (<a class="post-link" href=""><span class="text-primary" style="color:#D84C19; font-weight:bold">Last-Author, PI</span></a>), CHI 2026</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Google Gemini Academic Program Award</strong>, (<a class="post-link" href=""><span class="text-primary" style="color:#D84C19; font-weight:bold">$50,000, Single PI</span></a>), <a class="post-link" href="https://deepmind.google/" target="_blank">Google DeepMind</a>, 2026</span>
-            </li>
-            
-            <li class="publist-main-page">
-                <span><strong>Outstanding Paper Award</strong>, (<a class="post-link" href="https://arxiv.org/pdf/2501.15463" target="_blank">Mind the Value-Action Gap</a> Paper), (<a class="post-link" href=""><span class="text-primary" style="color:#D84C19; font-weight:bold">Top 1%, First-Author</span></a>), EMNLP 2025</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Pujiang Talent Award</strong>, (<a class="post-link" href=""><span class="text-primary" style="color:#D84C19; font-weight:bold">￥300,000, Single PI</span></a>), Shanghai, China, 2025</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Oriental Talent Award</strong>, (<a class="post-link" href=""><span class="text-primary" style="color:#D84C19; font-weight:bold">￥600,000, Single PI</span></a>), Shanghai, China, 2025</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Magnolia Talent Award</strong>, (<a class="post-link" href=""><span class="text-primary" style="color:#D84C19; font-weight:bold">￥750,000, Single PI</span></a>),Shanghai, China, 2025</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Pearl Elite Talent Award</strong>, (<a class="post-link" href=""><span class="text-primary" style="color:#D84C19; font-weight:bold">￥500,000, Single PI</span></a>),Shanghai, China, 2025</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Best Paper</strong>, (<a class="post-link" href="https://arxiv.org/pdf/2310.05292.pdf" target=”_blank”>HypoCompass Paper</a>), (<a class="post-link" href=""><span class="text-primary" style="color:#D84C19; font-weight:bold">Top 1%</span></a>, 1/76), AIED, 2024</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Best Interactive Event Award</strong>, (<a class="post-link" href="https://arxiv.org/pdf/2310.05292.pdf" target=”_blank”>HypoCompass Paper</a>), (<a class="post-link" href=""><span class="text-primary" style="color:#D84C19; font-weight:bold">Top 1%</span></a>, 1/76), AIED, 2024</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Carnegie Funds for Faculty Development</strong>, University of Michigan, School of Information, 2024</span>
-            </li>        
-            <li class="publist-main-page">
-                <span><strong>Best Demo</strong> (<a class="post-link" href="https://arxiv.org/pdf/2305.09770" target=”_blank”>ConvXAI Paper</a>) (<a class="post-link" href=""><span class="text-primary" style="color:#D84C19; font-weight:bold">Top 6%, First-Author</span></a>, 1/16), CSCW, 2023</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Google Research Science Conference Scholarships</strong>, (<a class="post-link" href="https://aclanthology.org/2023.emnlp-main.613.pdf" target=”_blank”>MultiturnCleanup Paper, First-Author</a>), Google Research, 2023</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Rising Star of Data Science</strong>, UC San Diego, UChicago, Stanford University, 2023</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Best Paper Award Honorable Mention</strong> (<a class="post-link" href="https://arxiv.org/abs/2302.07346" target=”_blank”>ScatterShot Paper</a>) (<a class="post-link" href=""><span class="text-primary" style="color:#D84C19; font-weight:bold">Top 5%</span></a>, 3/65), IUI, 2023</span>
-            </li> 
-            <li class="publist-main-page">
-                <span><strong>Graduate Student Travel Grant</strong>, IST, PennState, 2020, 2022</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>CRA-W Grad Cohort Award</strong>,  Grad Cohort Workshop for Women, 2019</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Lehigh University Fellowship</strong>, Lehigh University, 2018-2019</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Outstanding Master Degree</strong> (<a class="post-link" href="">Top 12.5%</a>, 5/40), RenMin University of China, 2015</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Liaison Officer </strong> (<a class="post-link" href="">Top 1%</a>, 30/3000), Delegation of Singapore Deputy Prime Minister at <a class="post-link" href="https://www.apec.org/">APEC</a>, 2014</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Outstanding Merit Student</strong> (<a class="post-link" href="">Top 0.2%</a>, 1/550), Beijing, 2013</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Excellent Graduate</strong> (<a class="post-link" href="">Top 0.2%</a>, 1/550), Beijing, 2013</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Outstanding-Dissertation Award</strong> (<a class="post-link" href="">Top 0.5%</a>, 3/550), USTB, 2013</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>National Endeavor Fellowship, Nationwide</strong> (<a class="post-link" href="">Top 2%</a>, 5/550), National, 2011 and 2012</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Vice Chairman</strong> (<a class="post-link" href="">Top 0.3%</a>, 10/3000), <a class="post-link" href="https://baike.baidu.com/item/%E5%8C%97%E4%BA%AC%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E5%AD%A6%E7%94%9F%E4%BC%9A/361270#5">The 6th presidium of the 22nd USTB student union</a>, 2011-2012</span>
-            </li>
-            <li class="publist-main-page">
-                <span><strong>Alumni Funding Scholarship</strong> (<a class="post-link" href="">Top 0.3%</a>, 8/3,000), USTB, 2012</span>
-            </li>
-        </span>
-    
+            <!-- Hidden items (shown on toggle) -->
+            <div class="news-item hidden-item">
+                <span class="news-date">2025-10</span>
+                <span class="news-content">Attending <strong><a class="post-link" href="https://colmweb.org/" target="_blank">COLM 2025 @ Montreal</a></strong> to support our <strong><a class="post-link" href="https://arxiv.org/abs/2504.01205" target="_blank">Epistemic Alignment</a></strong> work.</span>
+            </div>
+            <div class="news-item hidden-item">
+                <span class="news-date">2025-10</span>
+                <span class="news-content">Attending <strong>Human Flourishing with AI</strong> workshop @ <strong><a class="post-link" href="https://www.media.mit.edu/" target="_blank">MIT Media Lab</a></strong>.</span>
+            </div>
+            <div class="news-item hidden-item">
+                <span class="news-date">2025-09</span>
+                <span class="news-content">Our <strong><a class="post-link" href="https://arxiv.org/abs/2406.09264" target="_blank">Bidirectional Human-AI Alignment</a></strong> paper is accepted by <strong><a class="post-link" href="https://neurips.cc/" target="_blank">NeurIPS 2025 Position Track</a></strong> (&lt;6% Acceptance Rate)!</span>
+            </div>
+            <div class="news-item hidden-item">
+                <span class="news-date">2025-09</span>
+                <span class="news-content">Our <strong><a class="post-link" href="https://arxiv.org/pdf/2501.15463" target="_blank">Mind the Value-Action Gap</a></strong> paper is accepted by <strong><a class="post-link" href="https://2025.emnlp.org/" target="_blank">EMNLP 2025 Main</a></strong>!</span>
+            </div>
+            <div class="news-item hidden-item">
+                <span class="news-date">2025-09</span>
+                <span class="news-content">Our <strong><a class="post-link" href="" target="_blank">Deep Value Benchmark</a></strong> paper is accepted by <strong><a class="post-link" href="https://neurips.cc/" target="_blank">NeurIPS 2025 Spotlight!</a></strong></span>
+            </div>
+            <div class="news-item hidden-item">
+                <span class="news-date">2025-09</span>
+                <span class="news-content">Our <strong><a class="post-link" href="https://arxiv.org/pdf/2409.09586" target="_blank">ValueCompass</a></strong> paper is accepted by <strong><a class="post-link" href="https://www.winlp.org/" target="_blank">EMNLP 2025 WiNLP Workshop</a></strong>!</span>
+            </div>
+            <div class="news-item hidden-item">
+                <span class="news-date">2025-09</span>
+                <span class="news-content">I'm co-chairing the <strong><a class="post-link" href="https://winlp-workshop.github.io/" target="_blank">WiNLP Workshop @ EMNLP 2025</a></strong> and attend EMNLP 2025 in person to organize!</span>
+            </div>
+            <div class="news-item hidden-item">
+                <span class="news-date">2025-09</span>
+                <span class="news-content">Attended <b>AI Welfare Symposium</b> @ <strong><a class="post-link" href="https://www.hku.hk/" target="_blank">University of Hong Kong</a></strong> to discuss amazing book written by <strong><a class="post-link" href="https://shanghai.nyu.edu/content/computer-science" target="_blank">Google DeepMind</a></strong> scientists!</span>
+            </div>
+            <div class="news-item hidden-item">
+                <span class="news-date">2025-09</span>
+                <span class="news-content">Teaching a new course: <strong><a class="post-link" href="https://hua-shen.org/src/course_bialign.html" target="_blank">Bidirectional Human-AI Alignment</a></strong> @ <strong><a class="post-link" href="https://shanghai.nyu.edu/content/computer-science" target="_blank">NYU Shanghai</a></strong>.</span>
+            </div>
+            <div class="news-item hidden-item">
+                <span class="news-date">2025-09</span>
+                <span class="news-content">Serve in <b>Research Development Committee</b> of Computer Science @ <strong><a class="post-link" href="https://shanghai.nyu.edu/content/computer-science" target="_blank">NYU Shanghai</a></strong>.</span>
+            </div>
+            <div class="news-item hidden-item">
+                <span class="news-date">2025-09</span>
+                <span class="news-content">Starting Assistant Professor of Computer Science @ <strong><a class="post-link" href="https://shanghai.nyu.edu/content/computer-science" target="_blank">NYU Shanghai</a></strong>.</span>
+            </div>
+            <div class="news-item hidden-item">
+                <span class="news-date">2025-08</span>
+                <span class="news-content"><strong><a class="post-link" href="https://nips.cc/virtual/2025/tutorial/109592" target="_blank">Human-AI Alignment Tutorial</a></strong> accepted @ <strong><a class="post-link" href="https://neurips.cc/" target="_blank">NeurIPS 2025</a></strong>.</span>
+            </div>
+            <div class="news-item hidden-item">
+                <span class="news-date">2025-08</span>
+                <span class="news-content">Gave a talk on <b>Bidirectional Alignment & Value Alignment</b> @ <strong><a class="post-link" href="https://rdi.berkeley.edu/events/agentic-ai-summit" target="_blank">UC Berkeley Agentic AI Summit</a></strong>.</span>
+            </div>
+            <div class="news-item hidden-item">
+                <span class="news-date">2025-08</span>
+                <span class="news-content"><strong>Serving as Associate Chair</strong> @ <strong><a class="post-link" href="https://chi2026.acm.org/" target="_blank">CHI 2026</a></strong>.</span>
+            </div>
+            <div class="news-item hidden-item">
+                <span class="news-date">2025-08</span>
+                <span class="news-content"><strong>Serving as a PC member</strong> @ <strong><a class="post-link" href="https://aaai.org/conference/aaai/aaai-26/" target="_blank">AAAI 2026, AAAI AI Alignment Track</a></strong>.</span>
+            </div>
 
-
-
-        <div class="section-title"> <span>Selected Services</span> </div>
-        <span>
-            <li class="publist-main-page"><strong>Organizer</strong>, <a class="post-link" href="https://bialign-workshop.github.io/" target="_blank">CHI 2026 BiAlign Workshop</a></li>
-            <li class="publist-main-page"><strong>Area Chair</strong>, <a class="post-link" href="" target="_blank">COLM 2026</a></li>  
-            <li class="publist-main-page"><strong>CHI 2026 Best Paper Committee</strong>, <a class="post-link" href="" target="_blank">CHI 2026</a></li>
-            <li class="publist-main-page"><strong>Associate Chair (Poster Track)</strong>, <a class="post-link" href="" target="_blank">CHI 2026</a></li>
-            <li class="publist-main-page"><strong>Associate Chair (Main Track)</strong>, <a class="post-link" href="" target="_blank">CHI 2026</a></li>
-            <li class="publist-main-page"><strong>CHI 2026 Workshops Jury</strong>, <a class="post-link" href="" target="_blank">CHI 2026</a></li>  
-            <li class="publist-main-page"><strong>Area Chair</strong>, <a class="post-link" href="https://aclrollingreview.org/" target="_blank">ACL Rolling Review 2025</a></li>  
-            <li class="publist-main-page"><strong>Best Paper Committee</strong>, <a class="post-link" href="" target="_blank"></a>CHI 2025</a></li>  
-            <li class="publist-main-page"><strong>Associate Chair</strong>, <a class="post-link" href="" target="_blank"></a>CHI 2025</a></li>  
-            <li class="publist-main-page"><strong>Associate Chair</strong>, <a class="post-link" href="" target="_blank">CHI 2024 LBW</a></li>  
-            <li class="publist-main-page"><strong>Leading Organizer & Chair</strong>, <a class="post-link" href="https://bialign-workshop.github.io/" target="_blank">ICLR 2025 BiAlign Workshop</a>, <a class="post-link" href="https://bialign-workshop.github.io/" target="_blank">CHI 2025 BiAlign SIG</a></li>  
-            <li class="publist-main-page"><strong>Organizing Co-Chair</strong>, <a class="post-link" href="" target="_blank">EMNLP 2025 WiNLP Workshop</a></li>
-            <li class="publist-main-page"><strong>Organizing Co-Chair</strong>, <a class="post-link" href="" target="_blank">CSCW 2025 Design for Hope Workshop</a></li>
-            <li class="publist-main-page"><strong>Program Committee</strong>, <a class="post-link" href="" target="_blank">AAAI 2026, AAAI 2026 AI Alignment Track</a></li> 
-            <li class="publist-main-page"><strong>Program Committee</strong>, <a class="post-link" href="" target="_blank">ACL 2023, ACL 2021</a></li> 
-            <li class="publist-main-page"><strong>Program Committee</strong>, <a class="post-link" href="" target="_blank">EMNLP 2023, EMNLP 2022</a></li> 
-            <li class="publist-main-page"><strong>Program Committee</strong>, <a class="post-link" href="" target="_blank">CHI 2023 In2Writing Workshop, ICML 2023 AI & HCI Workshop</a></li>  
-            <li class="publist-main-page"><strong>Reviewer</strong>, <a class="post-link" href="" target="_blank">NeurIPS 2025</a></li> 
-            <li class="publist-main-page"><strong>Reviewer</strong>, <a class="post-link" href="" target="_blank">TOCHI 2025, UIST 2025, CSCW 2025, FAccT 2025</a></li>  
-            <li class="publist-main-page"><strong>Reviewer</strong>, <a class="post-link" href="" target="_blank">NAACL 2024, ICASSP 2024, EMNLP 2023, ARR 2021 - 2025</a></li>  
-    
-        </span>
-
-
-
+            <button class="toggle-btn" onclick="toggleSection('news-section', this)">Show more</button>
         </div>
+
+
+        <!-- ============ Selected Honors/Awards ============ -->
+        <div class="section-title"> <span>Selected Honors/Awards</span> </div>
+        <div class="collapsible-items" id="awards-section">
+
+            <li class="award-item">
+                <span class="award-highlight"><i class="fa-solid fa-trophy"></i></span> <strong>Best Paper Honorable Mention Award</strong>, (<a class="post-link" href="https://arxiv.org/pdf/2509.10830" target="_blank">LLM Dark Pattern</a> Paper), (<span class="award-highlight">Last-Author, PI</span>), CHI 2026
+            </li>
+            <li class="award-item">
+                <span class="award-highlight"><i class="fa-solid fa-trophy"></i></span> <strong>Google Gemini Academic Program Award</strong>, (<span class="award-highlight">$50,000, Single PI</span>), <a class="post-link" href="https://deepmind.google/" target="_blank">Google DeepMind</a>, 2026
+            </li>
+            <li class="award-item">
+                <span class="award-highlight"><i class="fa-solid fa-trophy"></i></span> <strong>Outstanding Paper Award</strong>, (<a class="post-link" href="https://arxiv.org/pdf/2501.15463" target="_blank">Mind the Value-Action Gap</a> Paper), (<span class="award-highlight">Top 1%, First-Author</span>), EMNLP 2025
+            </li>
+            <li class="award-item">
+                <strong>Pujiang Talent Award</strong>, (<span class="award-highlight">&#165;300,000, Single PI</span>), Shanghai, China, 2025
+            </li>
+            <li class="award-item">
+                <strong>Oriental Talent Award</strong>, (<span class="award-highlight">&#165;600,000, Single PI</span>), Shanghai, China, 2025
+            </li>
+            <li class="award-item">
+                <strong>Magnolia Talent Award</strong>, (<span class="award-highlight">&#165;750,000, Single PI</span>), Shanghai, China, 2025
+            </li>
+            <li class="award-item">
+                <strong>Pearl Elite Talent Award</strong>, (<span class="award-highlight">&#165;500,000, Single PI</span>), Shanghai, China, 2025
+            </li>
+            <li class="award-item">
+                <span class="award-highlight"><i class="fa-solid fa-trophy"></i></span> <strong>Best Paper</strong>, (<a class="post-link" href="https://arxiv.org/pdf/2310.05292.pdf" target="_blank">HypoCompass Paper</a>), (<span class="award-highlight">Top 1%</span>, 1/76), AIED, 2024
+            </li>
+
+            <!-- Hidden awards -->
+            <li class="award-item hidden-item-block" style="display:none">
+                <span class="award-highlight"><i class="fa-solid fa-trophy"></i></span> <strong>Best Interactive Event Award</strong>, (<a class="post-link" href="https://arxiv.org/pdf/2310.05292.pdf" target="_blank">HypoCompass Paper</a>), (<span class="award-highlight">Top 1%</span>, 1/76), AIED, 2024
+            </li>
+            <li class="award-item hidden-item-block" style="display:none">
+                <strong>Carnegie Funds for Faculty Development</strong>, University of Michigan, School of Information, 2024
+            </li>
+            <li class="award-item hidden-item-block" style="display:none">
+                <span class="award-highlight"><i class="fa-solid fa-trophy"></i></span> <strong>Best Demo</strong>, (<a class="post-link" href="https://arxiv.org/pdf/2305.09770" target="_blank">ConvXAI Paper</a>), (<span class="award-highlight">Top 6%, First-Author</span>, 1/16), CSCW, 2023
+            </li>
+            <li class="award-item hidden-item-block" style="display:none">
+                <strong>Google Research Science Conference Scholarships</strong>, (<a class="post-link" href="https://aclanthology.org/2023.emnlp-main.613.pdf" target="_blank">MultiturnCleanup Paper, First-Author</a>), Google Research, 2023
+            </li>
+            <li class="award-item hidden-item-block" style="display:none">
+                <strong>Rising Star of Data Science</strong>, UC San Diego, UChicago, Stanford University, 2023
+            </li>
+            <li class="award-item hidden-item-block" style="display:none">
+                <span class="award-highlight"><i class="fa-solid fa-trophy"></i></span> <strong>Best Paper Award Honorable Mention</strong>, (<a class="post-link" href="https://arxiv.org/abs/2302.07346" target="_blank">ScatterShot Paper</a>), (<span class="award-highlight">Top 5%</span>, 3/65), IUI, 2023
+            </li>
+            <li class="award-item hidden-item-block" style="display:none">
+                <strong>Graduate Student Travel Grant</strong>, IST, PennState, 2020, 2022
+            </li>
+            <li class="award-item hidden-item-block" style="display:none">
+                <strong>CRA-W Grad Cohort Award</strong>, Grad Cohort Workshop for Women, 2019
+            </li>
+            <li class="award-item hidden-item-block" style="display:none">
+                <strong>Lehigh University Fellowship</strong>, Lehigh University, 2018-2019
+            </li>
+            <li class="award-item hidden-item-block" style="display:none">
+                <strong>Outstanding Master Degree</strong> (<a class="post-link" href="">Top 12.5%</a>, 5/40), RenMin University of China, 2015
+            </li>
+            <li class="award-item hidden-item-block" style="display:none">
+                <strong>Liaison Officer</strong> (<a class="post-link" href="">Top 1%</a>, 30/3000), Delegation of Singapore Deputy Prime Minister at <a class="post-link" href="https://www.apec.org/">APEC</a>, 2014
+            </li>
+            <li class="award-item hidden-item-block" style="display:none">
+                <strong>Outstanding Merit Student</strong> (<a class="post-link" href="">Top 0.2%</a>, 1/550), Beijing, 2013
+            </li>
+            <li class="award-item hidden-item-block" style="display:none">
+                <strong>Excellent Graduate</strong> (<a class="post-link" href="">Top 0.2%</a>, 1/550), Beijing, 2013
+            </li>
+            <li class="award-item hidden-item-block" style="display:none">
+                <strong>Outstanding-Dissertation Award</strong> (<a class="post-link" href="">Top 0.5%</a>, 3/550), USTB, 2013
+            </li>
+            <li class="award-item hidden-item-block" style="display:none">
+                <strong>National Endeavor Fellowship, Nationwide</strong> (<a class="post-link" href="">Top 2%</a>, 5/550), National, 2011 and 2012
+            </li>
+            <li class="award-item hidden-item-block" style="display:none">
+                <strong>Vice Chairman</strong> (<a class="post-link" href="">Top 0.3%</a>, 10/3000), <a class="post-link" href="https://baike.baidu.com/item/%E5%8C%97%E4%BA%AC%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E5%AD%A6%E7%94%9F%E4%BC%9A/361270#5">The 6th presidium of the 22nd USTB student union</a>, 2011-2012
+            </li>
+            <li class="award-item hidden-item-block" style="display:none">
+                <strong>Alumni Funding Scholarship</strong> (<a class="post-link" href="">Top 0.3%</a>, 8/3,000), USTB, 2012
+            </li>
+
+            <button class="toggle-btn" onclick="toggleSection('awards-section', this)">Show more</button>
+        </div>
+
+
+        <!-- ============ Selected Services ============ -->
+        <div class="section-title"> <span>Selected Services</span> </div>
+        <div class="collapsible-items" id="services-section">
+
+            <div class="services-group-title">Organizer & Chair</div>
+            <li class="service-item"><strong>Organizer</strong>, <a class="post-link" href="https://bialign-workshop.github.io/" target="_blank">CHI 2026 BiAlign Workshop</a></li>
+            <li class="service-item"><strong>Leading Organizer & Chair</strong>, <a class="post-link" href="https://bialign-workshop.github.io/" target="_blank">ICLR 2025 BiAlign Workshop</a>, <a class="post-link" href="https://bialign-workshop.github.io/" target="_blank">CHI 2025 BiAlign SIG</a></li>
+            <li class="service-item"><strong>Organizing Co-Chair</strong>, <a class="post-link" href="" target="_blank">EMNLP 2025 WiNLP Workshop</a></li>
+            <li class="service-item"><strong>Organizing Co-Chair</strong>, <a class="post-link" href="" target="_blank">CSCW 2025 Design for Hope Workshop</a></li>
+
+            <div class="services-group-title">Area Chair & Associate Chair</div>
+            <li class="service-item"><strong>Area Chair</strong>, <a class="post-link" href="" target="_blank">COLM 2026</a></li>
+            <li class="service-item"><strong>CHI 2026 Best Paper Committee</strong>, <a class="post-link" href="" target="_blank">CHI 2026</a></li>
+            <li class="service-item"><strong>Associate Chair (Poster Track)</strong>, <a class="post-link" href="" target="_blank">CHI 2026</a></li>
+            <li class="service-item"><strong>Associate Chair (Main Track)</strong>, <a class="post-link" href="" target="_blank">CHI 2026</a></li>
+            <li class="service-item"><strong>CHI 2026 Workshops Jury</strong>, <a class="post-link" href="" target="_blank">CHI 2026</a></li>
+            <li class="service-item"><strong>Area Chair</strong>, <a class="post-link" href="https://aclrollingreview.org/" target="_blank">ACL Rolling Review 2025</a></li>
+            <li class="service-item"><strong>Best Paper Committee</strong>, CHI 2025</li>
+            <li class="service-item"><strong>Associate Chair</strong>, CHI 2025</li>
+            <li class="service-item"><strong>Associate Chair</strong>, <a class="post-link" href="" target="_blank">CHI 2024 LBW</a></li>
+
+            <!-- Hidden services -->
+            <div class="services-group-title hidden-item-block" style="display:none">Program Committee & Reviewer</div>
+            <li class="service-item hidden-item-block" style="display:none"><strong>Program Committee</strong>, <a class="post-link" href="" target="_blank">AAAI 2026, AAAI 2026 AI Alignment Track</a></li>
+            <li class="service-item hidden-item-block" style="display:none"><strong>Program Committee</strong>, ACL 2023, ACL 2021</li>
+            <li class="service-item hidden-item-block" style="display:none"><strong>Program Committee</strong>, EMNLP 2023, EMNLP 2022</li>
+            <li class="service-item hidden-item-block" style="display:none"><strong>Program Committee</strong>, CHI 2023 In2Writing Workshop, ICML 2023 AI & HCI Workshop</li>
+            <li class="service-item hidden-item-block" style="display:none"><strong>Reviewer</strong>, NeurIPS 2025</li>
+            <li class="service-item hidden-item-block" style="display:none"><strong>Reviewer</strong>, TOCHI 2025, UIST 2025, CSCW 2025, FAccT 2025</li>
+            <li class="service-item hidden-item-block" style="display:none"><strong>Reviewer</strong>, NAACL 2024, ICASSP 2024, EMNLP 2023, ARR 2021 - 2025</li>
+
+            <button class="toggle-btn" onclick="toggleSection('services-section', this)">Show more</button>
+        </div>
+
+    </div>
 
     </div>
 
 </div>
 
 
-
-
+<script>
+function toggleSection(sectionId, btn) {
+    var section = document.getElementById(sectionId);
+    section.classList.toggle('expanded');
+    if (section.classList.contains('expanded')) {
+        btn.textContent = 'Show less';
+        // Also show hidden-item-block elements
+        var blocks = section.querySelectorAll('.hidden-item-block');
+        blocks.forEach(function(el) { el.style.display = ''; });
+    } else {
+        btn.textContent = 'Show more';
+        var blocks = section.querySelectorAll('.hidden-item-block');
+        blocks.forEach(function(el) { el.style.display = 'none'; });
+    }
+}
+</script>
 
     </main>
 

@@ -23,6 +23,7 @@ body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure { m
     --brand-color: #440079;
     --link-color: #440079;
     --brand-color-hover: #FB9E09;
+    --brand-award: #D84C19;
     --font-size: 12pt;
     --font-size-section-title: 16pt;
     --font-size-title: 26pt;
@@ -727,6 +728,29 @@ form input[type=submit]:active { background: #420078; }
     line-height: var(--line-height);
     /* margin-top: 10px;
     margin-bottom: 10px; */
+}
+
+.publist-main-page-directions{
+    font-size: var(--font-size); 
+    font-family:  "Palatino", sans-serif;
+    line-height: var(--line-height);
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+    margin-left: 50px;
+}
+
+.main-page-research-direction-title{
+    font-size: 14pt; 
+    font-family: "Palatino", sans-serif;
+    line-height: var(--line-height);
+    text-align: left;
+    margin: 0;
+    margin-left: 10pt;
+    margin-top: 8pt;
+    /* font-style: italic; */
+    font-weight: 800;
+    color: var(--brand-award);
+    /* color: var(--brand-color); */
 }
 
 .listime{
