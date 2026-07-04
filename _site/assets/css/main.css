@@ -950,6 +950,7 @@ form input[type=submit]:active { background: #420078; }
     .cl-item {
         font-size: var(--font-size);
         margin-right: 2px;
+        color: var(--brand-color)
     }
     
     /* Improve social icons layout */
